@@ -24,8 +24,15 @@ Berikut adalah beberapa tampilan preview dari aplikasi:
 ![Preview 2](git/image/Beranda.png)
 ![Preview 3](git/image/Profil.png)
 ![Preview 4](git/image/Pengajuan.png)
-## /ontak
-Untuk pertanyaan dan kerja sama lebih lanjut, silakan hubungi fpradian24@gmail.com atau kunjungi profil github saya : Fahrizp24
+## Kontak
+Untuk pertanyaan dan kerja sama lebih lanjut, silakan hubungi :
+- fpradian24@gmail.com 
+- oktavianeka4@gmail.com
+- adityorahman18@gmail.com 
+- hanifahkurniasari0512@gmail.com 
+- mabdullatifm1127@gmail.com
+
+atau kunjungi profil github :[ Fahrizp24](https://github.com/Fahrizp24)
 
 ---
 
