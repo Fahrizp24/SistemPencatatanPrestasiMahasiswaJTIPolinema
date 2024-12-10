@@ -1,0 +1,101 @@
+.sub-judul{
+    color: #5272BF;
+}
+body {
+    background-color: white;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+.detail-prestasi {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .nama-lomba,
+  .penyelenggara,
+  .bidang,
+  .tanggal-final,
+  .dosen-pembimbing,
+
+  .jenis {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .dokumentasi {
+    margin-top: 20px;
+  }
+  .btn {
+    background-color: #5272BF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+.container{
+    display: flex;
+}
+.sidebar{
+    width: 200px;
+    background-color: #1a2b4c;
+    color: white;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.sidebar img{
+    width: 100%;
+    margin-bottom: auto;
+}
+.sidebar ul{
+    list-style: none;
+    padding: 0%;
+}
+.sidebar ul li{
+    margin: 20px;
+}
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+.back{
+    position: relative;
+    bottom: 20;
+    right: 20px;
+}
+.back button{
+    background-color: orangered;
+    border: 1px solid white;
+    border-radius:15px ;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.sidebar .logout {
+    position: absolute;
+    margin-top: auto;
+    bottom: 20px;
+}
+.logout button{
+background-color: white;
+border: 1px solid white;
+border-radius:10px ;
+padding: 10px 20px;
+cursor: pointer;
+}
+.status p{
+    padding: 20px;
+    border-radius: 8px;
+    color:orange;
+    background-color: #EEF6FF;
+    
+}
+.status h2 {
+    margin-top: 0;
+}

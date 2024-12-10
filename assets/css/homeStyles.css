@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'Inter', sans-serif; 
+    overflow-y: scroll; /* Memastikan scrollbar selalu ada */
+}
+body::-webkit-scrollbar {
+    width: 8px; /* Lebar scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888; /* Warna scrollbar */
+    border-radius: 4px; /* Radius untuk membulatkan */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Warna saat hover */
+}
+.container {
+    display: flex;
+}
+header {
+    width: 100%;
+    height: 10vh; /* Set to 10% of viewport height */
+    background-color: #EEEEEE;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow with y=4px */
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.logo-container {
+    width: 20%; /* Logo container width */
+    height: 100%;
+    background-color: #00234D; /* Full background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 80%; /* Adjust logo size within the container */
+    max-height: 80%; /* Keep within bounds */
+    object-fit: contain;
+}
+
+.sidebar {
+    margin-top: 10vh;
+    top: 0;
+    position: fixed;
+    width:20%;
+    background-color: #1a2b4c;
+    color: white;
+    height: 90vh;
+    padding: 20px;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 10px 20px;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+}
+
+.sidebar img {
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #f0f0f0;
+    width: 80%;
+    color: #0a1931;
+    border-radius: 20px;
+}
+
+.sidebar .logout {
+    position: absolute;
+    margin-top: auto;
+    bottom: 20px;
+}
+.logout button {
+    background-color: white;
+    border: 1px solid white;
+    color: #685BFF;
+    border-radius:10px ;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.content {
+    width: 70%;
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20%;
+    margin-top: 10vh;
+}
+.main-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+    min-width: fit-content;
+}
+.sub-judul{
+    color: #5272BF;
+    font-family: 'Poppins', sans-serif;
+}
+.status {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: -10px;
+}
+.status p{
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #EEF6FF;
+}
+.status h2 {
+    margin-top: 0;
+}
+.status-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.status-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px;
+    height: 80px;
+    justify-content: space-around;
+}
+
+.status-card.red {
+    display: flex;
+    background-color: #f8d7da;
+}
+.info{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 71px;
+    justify-content: space-between;
+}
+
+.status-card img{
+    width: 71px; height: auto;
+}
+.status-card.yellow {
+    display: flex;
+    background-color: #fff3cd;
+}
+.status-card.green {
+    display: flex;
+    background-color: #d4edda;
+}
+.status-card h3 {
+    font-size:xxx-large;
+    margin: -5px ;
+}
+.status-card h5 {
+    margin: 0px;
+    font-weight:500;
+}
+
+.detail {
+    background-color: white;
+    border-radius: 10px;
+}
+.detail table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+.detail th, .detail td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.detail th {
+    background-color: #00234C;
+    color: #FFFFFF;
+}
+.status-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    width: 70px;
+    font-weight: 500 ;
+}
+.status-label.ditolak {
+    background-color: #dc3545;
+}
+.status-label.diproses {
+    background-color: #ffc107;
+}
+.status-label.diterima {
+    background-color: #28a745;
+}
+.detail-button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.footer {
+    text-align: right;
+    margin: 20px 0;
+    color: #888;
+}
+

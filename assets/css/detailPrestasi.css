@@ -1,0 +1,236 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.separator {
+    margin-top: 0;
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 20px 0;
+}
+.content h1 {
+    font-size: 24px;
+    color: #5272BF;
+    margin-bottom: 0%;
+    align-self: flex-start;
+    font-family: 'Poppins', sans-serif;
+}
+.main-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-content h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #0d3b66;
+    margin-bottom: 0px;
+}
+
+.isi-form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 55%;
+}
+
+.form-group>div {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group p {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.document-form {
+    width: 40%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+.document-form h3 {
+    margin-top: 0;
+}
+
+.document-form .file-list {
+    list-style: none;
+    padding: 0;
+}
+
+.document-form .file-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    width: -webkit-fill-available;
+}
+
+.document-form .file-list li button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.document-form .file-list li button:hover {
+    background-color: #0056b3;
+}
+
+.statusPrestasi,
+.keterangan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 20px; */
+}
+
+.keterangan {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.keterangan textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box
+}
+
+.statusPrestasi span,
+.keterangan span {
+    font-weight: bold;
+}
+
+.statusPrestasi .processed {
+    color: #ff6600;
+}
+
+.status-diproses {
+    color: #ff6600;
+}
+
+.status-ditolak{
+    color: red;
+}
+
+.status-diterima{
+    color: green;
+}
+
+.back-button {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    text-decoration: none ;
+}
+
+.back-button button {
+    background-color: #EAEAEA;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    border: none;
+    text-decoration: none;
+}
+.back-button button i{
+    margin-right: 5px;
+}
+.back-button button:hover {
+    background-color: #ccc;
+}
+
+.btn-kembali a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#sertifikat-modal,
+#dokumentasi-modal,
+#suratTugas-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 25vh auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.modal-content img.modal-image{
+    width: 100%;
+    height: auto;
+}

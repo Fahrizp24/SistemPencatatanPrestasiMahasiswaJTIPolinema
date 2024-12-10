@@ -1,0 +1,81 @@
+header {
+    width: 100%;
+    background-color: #00234D;
+    color: #333;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif; 
+
+}
+header img{
+    width: 40%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
+    color: #00234D;
+}
+
+.container-form {
+    width: 100%;
+}
+
+.register input, select {
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #333;
+    background-color: #EBEBEB;
+}
+
+.register input[type='radio'] {
+    width: 15px;
+}
+
+.register input[type='submit'], .register input[type='button'] {
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0774EF;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.register{
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #EBEBEB;
+    margin: auto;
+    max-width: 800px;
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: end;
+}
+
+.pick-prodi {
+    display: flex;
+    /*display: none (if role = dosen)*/
+    float: left;
+    width: 50%;
+    align-items: center;
+    font-size: 14px;
+    gap: 10px;
+}
+
+label:after {
+    content: ' *';
+    color: red;
+}
+
+input[required] + label:after {
+    content: ' *';
+    color: red;
+}

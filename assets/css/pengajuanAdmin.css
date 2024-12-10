@@ -1,0 +1,53 @@
+.sub-judul{
+    font-family: Proppins, sans-serif;
+    color: blue;
+}
+body{
+   table-layout: auto;
+   background-color: white;
+   font-family: Inter, sans-serif;
+   margin: 0;
+   padding: 0;
+   table-layout: auto;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+table, th, td{
+    padding: 10px;
+    text-align: left;
+}
+th{
+background-color: #0d3b66;
+color: white;
+padding: 10px;
+}
+td{
+    padding: 10px;
+    text-align: left;
+}
+.main-content{
+    flex-grow: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.main-content p{
+    background-color: #EEF6FF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #000706;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.main-content h2{
+    background-color: #5272BF;
+    margin-bottom: 15px;
+}
+.container{
+   display: flex;
+}
