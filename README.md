@@ -20,13 +20,11 @@ Sistem Pencatatan Prestasi Mahasiswa JTI Polinema adalah aplikasi berbasis web y
 ## Screenshot Preview
 Berikut adalah beberapa tampilan preview dari aplikasi:
 
-![Preview 1](git\image\Login.png)
-![Preview 2](git\image\Beranda.png)
-![Preview 3](git\image\Profil.png)
-![Preview 4](git\image\Pengajuan.png)
-
-
-## Kontak
+![Preview 1](git/image/Login.png)
+![Preview 2](git/image/Beranda.png)
+![Preview 3](git/image/Profil.png)
+![Preview 4](git/image/Pengajuan.png)
+## /ontak
 Untuk pertanyaan dan kerja sama lebih lanjut, silakan hubungi fpradian24@gmail.com atau kunjungi profil github saya : Fahrizp24
 
 ---
