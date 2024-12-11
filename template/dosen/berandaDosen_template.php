@@ -55,7 +55,7 @@
                         echo "<td>" . $row['jenis'] . "</td>";
                         echo "<td>" . "Nasional" . "</td>";
                         echo "<td><span class='status status-" .  $row['status'] . "'>" . ucwords($row['status'])  . "</span></td>";
-                        echo "<td><a href=''><a href='riwayatPrestasiDosen.php?idPrestasi=" . urlencode($row['idPrestasi']) . 
+                        echo "<td><a href=''><a href='riwayatPrestasiDosen?idPrestasi=" . urlencode($row['idPrestasi']) . 
                                         "' class='detail-button'>Lihat</a></a></td>";
                         echo "</tr>";
                     }

@@ -42,6 +42,8 @@ function getPieChart(labels, data) {
             }]
         },
         options: {
+            responsive:true,
+            maintainAspectRatio:false,
             plugins: {
                 legend: {
                     position: 'right', // Posisi legend

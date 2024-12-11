@@ -84,6 +84,14 @@ class AdminController extends Controller
         }
         exit;
     }
+
+    public function kontrolAkun() {
+        $data = $_POST;
+
+        if (isset($data['kontrolAkun'])) {
+            
+        }
+    }
 }
 
 ?>

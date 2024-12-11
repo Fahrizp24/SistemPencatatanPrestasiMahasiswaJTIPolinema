@@ -104,7 +104,7 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <a href="detailPrestasiMahasiswa.php?idPrestasi=<?php echo urlencode($row['idPrestasi']); ?>"
+                                    <a href="detailPrestasiMahasiswa?idPrestasi=<?php echo urlencode($row['idPrestasi']); ?>"
                                         class="detail-button">Lihat Detail</a>
                                 </td>
                             </tr>

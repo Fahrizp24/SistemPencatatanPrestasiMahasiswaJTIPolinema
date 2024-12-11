@@ -38,7 +38,7 @@ class MahasiswaModel extends Model
         return $status;
     }
 
-    function getTableMahasiswa()
+    function getTableMahasiswa ()
     {
         $stmt = $this->_dbConnection->prepare("SELECT tanggalPengajuan, namaLomba, bidang, d.nama , poin, status, idPrestasi 
                         FROM prestasi p INNER JOIN dosen d ON p.nipDosenPembimbing=d.nip WHERE nimMahasiswa = ? ORDER BY idPrestasi ASC");
@@ -137,26 +137,33 @@ class MahasiswaModel extends Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function updateProfil($username, $nama, $email)
+    function updateProfil($username, $nama, $email,$profilePath)
     {
         // Validasi apakah email sudah digunakan oleh dosen lain
         $sql = "SELECT * FROM mahasiswa WHERE email = :email AND nim <> :nim";
-
+        
         $stmt = $this->_dbConnection->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':nim', $username);
         $stmt->execute();
-
+        
         if ($stmt->rowCount() != 0) {
             return json_encode(["status" => "error", "message" => "Email Telah Digunakan!"]);
         }
+        
+        if ($_FILES['profilePicture']['name']) {
+            $profilePath = 'assets/filemedia/fotoprofil' . $username . '.jpg';
+    
+            move_uploaded_file($_FILES['profilePicture']['tmp_name'], $profilePath);
+        }
 
-        $sql = "UPDATE mahasiswa SET nama = :nama, email = :email WHERE nim = :username";
+        $sql = "UPDATE mahasiswa SET nama = :nama, email = :email,profilPath = :profilPath WHERE nim = :username";
 
         $stmt = $this->_dbConnection->prepare($sql);
         $stmt->bindParam(':nama', $nama);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':profilePath', $profilePath);
         $result = $stmt->execute();
 
         if ($result) {
@@ -164,5 +171,16 @@ class MahasiswaModel extends Model
         } else {
             return json_encode(["status" => "error", "message" => "Perubahan Profil Gagal!"]);
         }
+    }
+
+    function getPhotoProfilePath($username) {
+        $profilePath = 'assets/filemedia/fotoprofil/';
+    
+        if (is_file($profilePath . $username .'.jpg')) {
+            $profilePath = $profilePath . $username .'.jpg';
+        } else {
+            $profilePath = $profilePath . 'default.jpg';
+        }
+        return $profilePath;
     }
 }

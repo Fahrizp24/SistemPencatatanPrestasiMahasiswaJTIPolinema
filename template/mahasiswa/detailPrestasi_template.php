@@ -89,7 +89,7 @@ require_once 'assets/component/check_login.php';
                             $prestasi[0]['status'] = 'ditolak';
                         } else if ($prestasi[0]['status'] == 'diterimaAdmin') {
                             $prestasi[0]['status'] = 'diterima';
-                        } else if ($prestasi[0]['status'] == 'diproses') {
+                        } else if ($hasil[0]['status'] == 'diproses' || $hasil[0]['status'] == 'diterimaDosen') {
                             $prestasi[0]['status'] = 'diproses';
                         }
                         ?>
@@ -101,13 +101,13 @@ require_once 'assets/component/check_login.php';
                         </div>
                         <div class="keterangan">
                             <label for="keterangan" style="font-weight: bold;">Keterangan :</label>
-                            <textarea id="keterangan" readonly></textarea>
+                            <textarea id="keterangan" readonly><?= $hasil[0]['keterangan']?></textarea>
                         </div>
                     </div>
 
                 </div>
                 <div class="back-button">
-                    <a href="berandaMahasiswa.php"> <button><i class="fas fa-arrow-left"></i>Kembali</button></a>
+                    <a href="berandaMahasiswa"> <button><i class="fas fa-arrow-left"></i>Kembali</button></a>
                 </div>
             </div>
         </div>

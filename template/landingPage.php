@@ -17,7 +17,7 @@
     <header>
         <img src="image/logoSPPM.png" alt="SPPM logo">
         <div class="login">
-            <a href="index.php">
+            <a href="index">
                 <button type="submit" class="login">Login</button>
             </a>
         </div>

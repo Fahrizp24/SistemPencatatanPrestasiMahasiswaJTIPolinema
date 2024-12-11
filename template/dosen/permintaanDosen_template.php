@@ -63,7 +63,7 @@ require_once 'assets/component/check_login.php';
                         echo "<td style='display:none'>" . $row['sertifikatPath'] . "</td>";
                         echo "<td style='display:none'>" . $row['dokumentasiPath'] . "</td>";
                         echo "<td style='display:none'>" . $row['suratTugasPath'] . "</td>";
-                        echo "<td><a href=''><a href='detailPrestasiDosen.php?idPrestasi=" . urlencode($row['idPrestasi']) .
+                        echo "<td><a href=''><a href='detailPrestasiDosen?idPrestasi=" . urlencode($row['idPrestasi']) .
                             "' class='detail-button'>Proses</a></a></td>";
                         echo "<td style='display:none;'>" . $row['idPrestasi'] . "</td>";
                         echo "</tr>";

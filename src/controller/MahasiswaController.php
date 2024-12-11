@@ -100,8 +100,9 @@ class MahasiswaController extends Controller
         if ( $data['updateProfil']) {
             $username = htmlspecialchars($data['username']);
             $nama = htmlspecialchars($data['nama']);
-            $email = htmlspecialchars($data['email']);        
-            echo  $this->_model->updateProfil($username, $nama, $email);
+            $email = htmlspecialchars($data['email']);   
+            $profilPath = $this->_model->getPhotoProfilePath($data['username']);     
+            echo  $this->_model->updateProfil($username, $nama, $email,$profilPath);
         }
     }
 
