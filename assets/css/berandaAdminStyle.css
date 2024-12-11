@@ -84,11 +84,28 @@ table td .status {
 }
 
 canvas {
-    max-width: 400px;
     margin: 0 auto;
-    /* Untuk membuat pie chart berada di tengah */
     display: block;
 }
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin-top: 20px; */
+}
+
+
+
+.chart {
+    flex: 1;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .modal {
     display: none;
@@ -143,9 +160,6 @@ canvas {
     padding: 15px;
 }
 
-/* .point-form p #warn{
-    color: #;
-} */
 
 .point-form label {
     font-weight: bold;

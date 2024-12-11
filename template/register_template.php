@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div>
-                    <input type="button" value="Kembali ke halaman Login" onclick="location.href='login.php'">
+                    <input type="button" value="Kembali ke halaman Login" onclick="location.href='login'">
                 </div>
                 <div>
                     <input type="submit" value="Daftar">

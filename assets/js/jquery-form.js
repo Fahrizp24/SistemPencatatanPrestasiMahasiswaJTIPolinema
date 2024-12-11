@@ -5,7 +5,7 @@ $(document).ready(function () {
         var password = $('#password').val();
 
         $.ajax({
-            url: 'LoginController.php',
+            url: 'LoginController',
             type: 'POST',
             data: {
                 login: 'login',
@@ -16,11 +16,11 @@ $(document).ready(function () {
                 var data = JSON.parse(response);
                 if (data.status === 'success') {
                     if (data.role === 'mahasiswa') {
-                        window.location.href = 'berandaMahasiswa.php';
+                        window.location.href = 'berandaMahasiswa';
                     } else if (data.role === 'admin') {
-                        window.location.href = 'berandaAdmin.php'
+                        window.location.href = 'berandaAdmin'
                     } else {
-                        window.location.href = 'berandaDosen.php'
+                        window.location.href = 'berandaDosen'
                     }
                 } else {
                     $('#status').html('Username Atau Password Salah');
@@ -48,7 +48,7 @@ $(document).ready(function () {
         var email = $('#email').val();
 
         $.ajax({
-            url: 'RegistresController.php',
+            url: 'RegistresController',
             type: 'POST',
             data: {
                 action: 'register', // Parameter untuk menentukan fungsi yang dipanggil
@@ -64,7 +64,7 @@ $(document).ready(function () {
             success: function (response) {
                 var data = JSON.parse(response);
                 if (data.status === 'success') {
-                    window.location.href = '../view/index.php'; // Redirect jika register berhasil
+                    window.location.href = 'index'; // Redirect jika register berhasil
                 } else {
                     $('#status').html(data.message);
                 }
@@ -82,17 +82,16 @@ $(document).ready(function () {
         var nama = $('#nama').val();
         var email = $('#email').val();
         var role = $('#role').val();
+        var formData = new FormData(this);
+
+        formData.append('updateProfil', 'updateProfil');
 
         $.ajax({
             url: 'updateProfil',
             type: 'POST',
-            data: {
-                updateProfil: 'updateProfil',
-                username: username,
-                nama: nama,
-                email: email,
-                role: role
-            },
+            data: formData,
+            processData: false,
+            contentType: false,
             success: function (response) {
                 var data = JSON.parse(response);
                 if (data.status === 'success') {
@@ -149,7 +148,7 @@ $(document).ready(function () {
             url: 'logout',
             type: 'GET'
         });
-        window.location.href = 'index.php'; e
+        window.location.href = 'index'; e
     });
 
 
@@ -282,7 +281,7 @@ $(document).ready(function () {
         var poin = $('#poin').val();
         $('#')
         $.ajax({
-            url: '../controller/process-form.php',
+            url: '../controller/process-form',
             type: 'POST',
             data: {
                 action: 'updatePoinAdmin', // Parameter untuk menentukan fungsi yang dipanggil
@@ -292,7 +291,7 @@ $(document).ready(function () {
             success: function (response) {
                 var data = JSON.parse(response);
                 if (data.status === 'success') {
-                    window.location.href = '../view/index.php'; // window refresh
+                    window.location.href = '../view/index'; // window refresh
                 } else {
                     $('#status').html(data.message);
                 }

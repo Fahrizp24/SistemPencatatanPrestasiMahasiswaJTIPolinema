@@ -82,7 +82,7 @@ require_once 'assets/component/check_login.php';
 
                 </div>
                 <div class="back-button">
-                    <a href="berandaAdmin.php"> <button><i class="fas fa-arrow-left"></i>Kembali</button></a>
+                    <a href="berandaAdmin"> <button><i class="fas fa-arrow-left"></i>Kembali</button></a>
                 </div>
             </div>
         </div>
