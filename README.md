@@ -1,9 +1,8 @@
-# SistemPrestasiJTIPolinema
 # Sistem Pencatatan Prestasi Mahasiswa JTI Polinema
 
 > Repository ini merupakan hasil perbaikan struktur kode dari repository sebelumnya:
 > 
-> https://github.com/Fahrizp24/SistemPrestasiJTIPolinema.git
+> [Repository SPPM Lama](https://github.com/Fahrizp24/SistemPrestasiJTIPolinema.git)
 
 ## Deskripsi
 Sistem Pencatatan Prestasi Mahasiswa JTI Polinema adalah aplikasi berbasis web yang dirancang untuk memudahkan pengelolaan dan pencatatan prestasi mahasiswa di Jurusan Teknik Informatika, Politeknik Negeri Malang (Polinema). Dengan sistem ini, pengelolaan data prestasi dapat dilakukan dengan lebih efisien oleh dosen dan pihak administrasi.
