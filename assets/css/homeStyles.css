@@ -48,6 +48,23 @@ header {
     object-fit: contain;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    color: blue;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+}
+
 .sidebar {
     margin-top: 10vh;
     top: 0;
@@ -58,6 +75,8 @@ header {
     height: 90vh;
     padding: 20px;
     box-sizing: border-box;
+    z-index: 999;
+    transition: left 0.3s ease-in-out;
     font-weight: 600;
 }
 
@@ -231,3 +250,39 @@ header {
     color: #888;
 }
 
+@media (max-width: 768px) {
+    .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Pastikan z-index lebih tinggi dari header */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    }
+
+    .sidebar {
+        left: -100%;
+        
+    }
+
+    .sidebar a{
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .logout button {
+        padding: 6px 12px;
+    }
+
+    .sidebar.active {
+        left: 0; /* Sidebar muncul saat toggle diaktifkan */
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
