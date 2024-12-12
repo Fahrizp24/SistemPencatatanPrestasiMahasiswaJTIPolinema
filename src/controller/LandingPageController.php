@@ -18,13 +18,15 @@ class LandingPageController extends Controller
 
     public function index()
     {
+        $newsData = $this->_model->getNewsData();
+        $leaderboard = $this->_model->getLeaderboard();
+
+        $this->view->setData([
+            'newsData' => $newsData,
+            'leaderboard'=> $leaderboard
+        ]);
+
         $this->view->setTemplate('template/landingPage_template.php');
         $this->view->render();
     }
-
-    public function logout() {
-        echo $this->_model->logout();
-        exit;
-    }
-    
 }
