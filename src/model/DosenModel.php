@@ -82,26 +82,38 @@ class DosenModel extends Model
         }
     }
 
-    function updateProfil($username, $nama, $email)
+    function updateProfil($nip, $nama, $email)
     {
         // Validasi apakah email sudah digunakan oleh dosen lain
         $sql = "SELECT * FROM dosen WHERE email = :email AND nip <> :nip";
 
         $stmt = $this->_dbConnection->prepare($sql);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':nip', $username);
+        $stmt->bindParam(':nip', $nip);
         $stmt->execute();
 
         if ($stmt->rowCount() != 0) {
             return json_encode(["status" => "error", "message" => "Email Telah Digunakan!"]);
         }
 
-        $sql = "UPDATE dosen SET nama = :nama, email = :email WHERE nip = :username";
+        if ($_FILES['profilePicture']['name']) {
+            $profilePath = 'assets/filemedia/fotoprofil/' . $nip . '.jpg';
+    
+            move_uploaded_file($_FILES['profilePicture']['tmp_name'], $profilePath);
+
+            $sql = "UPDATE akun SET profilPath = :profilePath";
+
+            $stmt = $this->_dbConnection->prepare($sql);
+            $stmt->bindParam(':profilePath', $profilePath);
+            $result = $stmt->execute();
+        }
+
+        $sql = "UPDATE dosen SET nama = :nama, email = :email WHERE nip = :nip";
 
         $stmt = $this->_dbConnection->prepare($sql);
         $stmt->bindParam(':nama', $nama);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':nip', $nip);
         $result = $stmt->execute();
 
         if ($result) {
@@ -111,6 +123,15 @@ class DosenModel extends Model
         }
     }
 
+    function getPhotoProfilePath($username) {
+        $profilePath = 'assets/filemedia/fotoprofil/';
     
+        if (is_file($profilePath . $username .'.jpg')) {
+            $profilePath = $profilePath . $username .'.jpg';
+        } else {
+            $profilePath = $profilePath . 'default.jpg';
+        }
+        return $profilePath;
+    }
 
 }

@@ -31,7 +31,11 @@ class DosenController extends Controller
     public function profil()
     {
         $profile = $this->_model->getDosen($_SESSION['session_username']);
-        $this->view->setData(['profile' => $profile]);
+        $foto = $this->_model->getPhotoProfilePath($_SESSION['session_username']);
+        $this->view->setData([
+            'profile' => $profile,
+            'foto' => $foto
+        ]);
         $this->view->setTemplate('template/dosen/profilDosen_template.php');
         $this->view->render();
     }
@@ -66,10 +70,10 @@ class DosenController extends Controller
     public function updateProfil() {
         $data = $_POST;
         if ( $data['updateProfil']) {
-            $username = htmlspecialchars($data['username']);
+            $nip = $_SESSION['session_username'];
             $nama = htmlspecialchars($data['nama']);
             $email = htmlspecialchars($data['email']);        
-            echo  $this->_model->updateProfil($username, $nama, $email);
+            echo $this->_model->updateProfil($nip, $nama, $email);
         }
     }
 }

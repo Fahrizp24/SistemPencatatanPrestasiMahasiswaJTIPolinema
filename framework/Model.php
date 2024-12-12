@@ -12,8 +12,8 @@ class Model
     {
         try {
             //$serverName = "REEE\\sqlexpress";
-            // $serverName = "LAPTOP-0H3EPKAS\SQLEXPRESS"; 
-            $serverName = "LAPTOP-MLPOEBU2\SQLEXPRESS";
+            $serverName = "LAPTOP-0H3EPKAS\SQLEXPRESS"; 
+            // $serverName = "LAPTOP-MLPOEBU2\SQLEXPRESS";
             //$serverName = "DESKTOP-RF6CM3D\SQLEXPRESS";
             //$serverName = "ABDUL\SQLEXPRESS";
             $database = "SistemPrestasi";

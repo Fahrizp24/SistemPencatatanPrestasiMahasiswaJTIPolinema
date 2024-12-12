@@ -37,13 +37,14 @@ $app->setRoutes([
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/getDosen' => 'MahasiswaController@getDosen',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/submitPengajuan' => 'MahasiswaController@submitPengajuan',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/profilMahasiswa' => 'MahasiswaController@profil',
-    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/updateProfil' => 'MahasiswaController@updateProfil',
+    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/updateProfilMhs' => 'MahasiswaController@updateProfil',
 
 
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/berandaDosen' => 'DosenController@beranda',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/profilDosen' => 'DosenController@profil',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/permintaanDosen' => 'DosenController@permintaan',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/riwayatPrestasiDosen' => 'DosenController@riwayatPrestasi',
+    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/updateProfilDsn' => 'DosenController@updateProfil',
 
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/berandaAdmin' => 'AdminController@beranda',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/detailPrestasiAdmin' => 'AdminController@detailPrestasi',

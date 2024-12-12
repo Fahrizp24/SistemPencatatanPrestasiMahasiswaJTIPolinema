@@ -5,7 +5,7 @@ var modal = document.getElementById("editProfileModal");
 var btn = document.getElementById("editProfileBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementById("close");
+var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
@@ -23,7 +23,7 @@ document.getElementById('profilePicture').addEventListener('change', function (e
     reader.onload = function () {
         document.getElementById('previewImage').src = reader.result;
     };
-    reader.readAsDataURL(event.target.files);
+    reader.readAsDataURL(event.target.files[0]);
 });
 
 // When the user clicks on <span> (x), close the modal

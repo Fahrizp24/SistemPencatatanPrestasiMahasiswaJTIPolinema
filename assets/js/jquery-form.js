@@ -78,16 +78,13 @@ $(document).ready(function () {
 
     $('#updateProfilForm').submit(function (event) {
         event.preventDefault();
-        var username = $('#username').val();
-        var nama = $('#nama').val();
-        var email = $('#email').val();
-        var role = $('#role').val();
         var formData = new FormData(this);
+        var url = (formData.get('role') == 'Dosen') ? 'updateProfilDsn' :'updateProfilMhs';
 
         formData.append('updateProfil', 'updateProfil');
 
         $.ajax({
-            url: 'updateProfil',
+            url: url,
             type: 'POST',
             data: formData,
             processData: false,

@@ -137,14 +137,13 @@ class MahasiswaModel extends Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function updateProfil($username, $nama, $email,$profilePath)
+    function updateProfil($nim, $nama, $email)
     {
-        // Validasi apakah email sudah digunakan oleh dosen lain
         $sql = "SELECT * FROM mahasiswa WHERE email = :email AND nim <> :nim";
         
         $stmt = $this->_dbConnection->prepare($sql);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':nim', $username);
+        $stmt->bindParam(':nim', $nim);
         $stmt->execute();
         
         if ($stmt->rowCount() != 0) {
@@ -152,18 +151,23 @@ class MahasiswaModel extends Model
         }
         
         if ($_FILES['profilePicture']['name']) {
-            $profilePath = 'assets/filemedia/fotoprofil' . $username . '.jpg';
+            $profilePath = 'assets/filemedia/fotoprofil/' . $nim . '.jpg';
     
             move_uploaded_file($_FILES['profilePicture']['tmp_name'], $profilePath);
+
+            $sql = "UPDATE akun SET profilPath = :profilePath";
+
+            $stmt = $this->_dbConnection->prepare($sql);
+            $stmt->bindParam(':profilePath', $profilePath);
+            $result = $stmt->execute();
         }
 
-        $sql = "UPDATE mahasiswa SET nama = :nama, email = :email,profilPath = :profilPath WHERE nim = :username";
+        $sql = "UPDATE mahasiswa SET nama = :nama, email = :email WHERE nim = :nim";
 
         $stmt = $this->_dbConnection->prepare($sql);
         $stmt->bindParam(':nama', $nama);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':profilePath', $profilePath);
+        $stmt->bindParam(':nim', $nim);
         $result = $stmt->execute();
 
         if ($result) {

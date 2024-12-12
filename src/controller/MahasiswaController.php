@@ -82,7 +82,11 @@ class MahasiswaController extends Controller
     public function profil()
     {
         $profile = $this->_model->getMahasiswa($_SESSION['session_username']);
-        $this->view->setData(['profile' => $profile]);
+        $foto = $this->_model->getPhotoProfilePath($_SESSION['session_username']);
+        $this->view->setData([
+            'profile' => $profile,
+            'foto'=> $foto
+        ]);
         $this->view->setTemplate('template/mahasiswa/profilMahasiswa_template.php');
         $this->view->render();
     }
@@ -98,11 +102,10 @@ class MahasiswaController extends Controller
     public function updateProfil() {
         $data = $_POST;
         if ( $data['updateProfil']) {
-            $username = htmlspecialchars($data['username']);
+            $nim = $_SESSION['session_username'];
             $nama = htmlspecialchars($data['nama']);
-            $email = htmlspecialchars($data['email']);   
-            $profilPath = $this->_model->getPhotoProfilePath($data['username']);     
-            echo  $this->_model->updateProfil($username, $nama, $email,$profilPath);
+            $email = htmlspecialchars($data['email']);     
+            echo  $this->_model->updateProfil($nim, $nama, $email);
         }
     }
 

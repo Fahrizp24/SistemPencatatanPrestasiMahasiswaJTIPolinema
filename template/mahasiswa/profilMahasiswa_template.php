@@ -37,7 +37,7 @@
                             </p>
                             <p>Jurusan Teknologi Informasi</p>
                         </div>
-                        <img alt="Profile Picture" src="<?php echo $profile[0]['profilPath'] ?>" />
+                        <img alt="Profile Picture" src="<?=$foto?>?>" />
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
         <hr class="separator">
         <form class="form-group" id="updateProfilForm">
             <div class="profile-pic-container">
-                <img id="previewImage" src="<?php echo $profile[0]['profilPath'] ?>" alt="Preview Gambar" class="profile-pic">
+                <img id="previewImage" src="<?=$foto?>" alt="Preview Gambar" class="profile-pic">
                 <div class="edit-overlay">
                     <span class="edit-icon">✎</span>
                 </div>
