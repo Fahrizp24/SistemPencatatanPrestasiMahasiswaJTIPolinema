@@ -2,8 +2,6 @@
 
 namespace framework;
 
-use src\BerandaController;
-
 class App
 {
     private $_routes;

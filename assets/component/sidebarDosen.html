@@ -1,20 +1,24 @@
 <script>
     $(document).ready(function () {
-    // Mendapatkan URL path halaman saat ini
-    var currentPath = window.location.pathname;
-    console.log(currentPath);
-    // Membandingkan URL path dengan href di setiap link sidebar
-    $('.sidebar a').each(function () {
-        var linkPath = $(this).attr('href');
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
 
-        // Jika URL path cocok dengan href, tambahkan class 'active'
-        if (currentPath.includes(linkPath)) {
-            $('.sidebar a').removeClass('active'); // Hilangkan class 'active' dari link lainnya
-            $(this).addClass('active'); // Tambahkan class 'active' pada link yang sesuai
-        }
+        // Menambahkan event listener
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Mendapatkan URL path halaman saat ini
+        var currentPath = window.location.pathname;
+        $('.sidebar a').each(function () {
+            var linkPath = $(this).attr('href');
+            // Jika URL path cocok dengan href, tambahkan class 'active'
+            if (currentPath.includes(linkPath)) {
+                $('.sidebar a').removeClass('on'); // Hilangkan class 'active' dari link lainnya
+                $(this).addClass('on'); // Tambahkan class 'active' pada link yang sesuai
+            }
+        });
     });
-});
-
 </script>
 <div class="sidebar" id="sidebar">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>

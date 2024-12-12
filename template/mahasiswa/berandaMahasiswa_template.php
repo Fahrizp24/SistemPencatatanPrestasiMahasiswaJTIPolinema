@@ -1,14 +1,16 @@
 <?php
 // require_once 'assets/component/check_login.php';
-?> 
+?>
 
 <html>
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPPM POLINEMA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <script src="assets/js/jquery-3.7.1.js"></script>
     <script src="assets/js/jquery-form.js"></script>
     <link rel="stylesheet" href="assets/css/homeStyles.css">
@@ -16,19 +18,8 @@
 </head>
 
 <body>
-<header>
-        <div class="logo-container">
-        <img src="assets/img/jtiSppmPolinema.png" alt="SPPM POLINEMA Logo" />
-        </div>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-    <div id="sidebar-container"></div>
     <div class="container">
-        
+        <?php require_once 'assets/component/header.html' ?>
         <?php require_once 'assets/component/sidebarMahasiswa.html' ?>
         <div class="content">
             <div class="main-content">
@@ -135,21 +126,5 @@
 
 </html>
 <script>
-        const menuToggle = document.getElementById('menu-toggle');
-const sidebarContainer = document.getElementById('sidebar-container');
 
-// Memuat sidebar.html ke dalam sidebar-container
-fetch('assets/component/sidebarMahasiswa.html')
-    .then(response => response.text())
-    .then(html => {
-        sidebarContainer.innerHTML = html;
-        const sidebar = document.getElementById('sidebar');
-        
-        // Menambahkan event listener setelah sidebar dimuat
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-    })
-    .catch(error => console.error('Error loading sidebar:', error));
-
-    </script>
+</script>

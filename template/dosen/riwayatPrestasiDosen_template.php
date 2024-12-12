@@ -20,7 +20,7 @@ require_once 'assets/component/check_login.php';
         <?php require_once 'assets/component/header.html' ?>
         <?php require_once 'assets/component/sidebarDosen.html' ?>
         <div class="content">
-        <div class="main-content">
+            <div class="main-content">
                 <h1>Detail Prestasi</h1>
                 <hr class="separator">
                 <div class="isi-form">
@@ -114,47 +114,47 @@ require_once 'assets/component/check_login.php';
     </div>
     </div>
     <div class="footer">
-    ©2024 | SPPM JTI POLINEMA
+        ©2024 | SPPM JTI POLINEMA
         <img src="assets/view/img/LogoPolinema.png" alt="logo POLINEMA" width="20" height="20">
     </div>
     </div>
     <script>
-    // Array untuk menyimpan modal dan tombol
-    var modals = [
-        { modal: document.getElementById("sertifikat-modal"), btn: document.getElementById("sertifikatPath") },
-        { modal: document.getElementById("dokumentasi-modal"), btn: document.getElementById("dokumentasiPath") },
-        { modal: document.getElementById("suratTugas-modal"), btn: document.getElementById("suratTugasPath") }
-    ];
+        // Array untuk menyimpan modal dan tombol
+        var modals = [
+            { modal: document.getElementById("sertifikat-modal"), btn: document.getElementById("sertifikatPath") },
+            { modal: document.getElementById("dokumentasi-modal"), btn: document.getElementById("dokumentasiPath") },
+            { modal: document.getElementById("suratTugas-modal"), btn: document.getElementById("suratTugasPath") }
+        ];
 
-    // Fungsi untuk membuka modal
-    modals.forEach(function (item) {
-        item.btn.onclick = function () {
-            item.modal.style.display = "block";
-        };
-    });
-
-    // Fungsi untuk menutup modal
-    function closeModal(modal) {
-        modal.style.display = "none";
-    }
-
-    // Menambahkan event listener untuk tombol close
-    var closeButtons = document.getElementsByClassName("close");
-    Array.from(closeButtons).forEach(function (closeBtn, index) {
-        closeBtn.onclick = function () {
-            closeModal(modals[index].modal);
-        };
-    });
-
-    // Menutup modal jika pengguna mengklik di luar modal
-    window.onclick = function (event) {
+        // Fungsi untuk membuka modal
         modals.forEach(function (item) {
-            if (event.target == item.modal) {
-                closeModal(item.modal);
-            }
+            item.btn.onclick = function () {
+                item.modal.style.display = "block";
+            };
         });
-    };
-</script>
+
+        // Fungsi untuk menutup modal
+        function closeModal(modal) {
+            modal.style.display = "none";
+        }
+
+        // Menambahkan event listener untuk tombol close
+        var closeButtons = document.getElementsByClassName("close");
+        Array.from(closeButtons).forEach(function (closeBtn, index) {
+            closeBtn.onclick = function () {
+                closeModal(modals[index].modal);
+            };
+        });
+
+        // Menutup modal jika pengguna mengklik di luar modal
+        window.onclick = function (event) {
+            modals.forEach(function (item) {
+                if (event.target == item.modal) {
+                    closeModal(item.modal);
+                }
+            });
+        };
+    </script>
 </body>
 
 </html>

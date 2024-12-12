@@ -6,12 +6,14 @@
 <html lang="id">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         SPPM POLINEMA
     </title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/informasiAdminStyle.css">
     <script src="assets/js/jquery-3.7.1.js"></script>
     <script src="assets/js/jquery-form.js"></script>
@@ -19,18 +21,8 @@
 </head>
 
 <body>
-<header>
-        <div class="logo-container">
-        <img src="assets/img/jtiSppmPolinema.png" alt="SPPM POLINEMA Logo" />
-        </div>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-    <div id="sidebar-container"></div>
     <div class="container">
+        <?php require_once 'assets/component/header.html' ?>
         <?php require_once 'assets/component/sidebarAdmin.html' ?>
         <div class="content">
             <div class="main-content">
@@ -66,27 +58,12 @@
 
             </div>
             <div class="footer">
-            ©2024 | SPPM JTI POLINEMA
+                ©2024 | SPPM JTI POLINEMA
                 <img src="assets/img/LogoPolinema.png" alt="logo POLINEMA" width="20" height="20">
             </div>
         </div>
     </div>
 </body>
 
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebarContainer = document.getElementById('sidebar-container');
-    fetch('assets/component/sidebarAdmin.html')
-    .then(response => response.text())
-    .then(html => {
-        sidebarContainer.innerHTML = html;
-        const sidebar = document.getElementById('sidebar');
-        
-        // Menambahkan event listener setelah sidebar dimuat
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-    })
-    .catch(error => console.error('Error loading sidebar:', error));
-</script>
+
 </html>

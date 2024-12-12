@@ -24,7 +24,7 @@ header {
     width: 100%;
     height: 10vh; /* Set to 10% of viewport height */
     background-color: #EEEEEE;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow with y=4px */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Shadow with y=4px */
     position: fixed;
     top: 0;
     left: 0;
@@ -60,7 +60,7 @@ header {
 .menu-toggle span {
     height: 3px;
     width: 100%;
-    background-color: #1a2b4c;
+    background-color: #EEEEEE;
     border-radius: 3px;
 }
 
@@ -100,7 +100,7 @@ header {
 
 }
 
-.sidebar a:hover, .sidebar a.active {
+.sidebar a:hover, .sidebar a.on {
     background-color: #f0f0f0;
     width: 80%;
     color: #0a1931;
@@ -250,10 +250,10 @@ header {
 }
 
 @media (max-width: 768px) {
+    
     .menu-toggle {
     display: flex;
     position: absolute;
-    top: 20px;
     right: 20px;
     z-index: 1001; /* Pastikan z-index lebih tinggi dari header */
     flex-direction: column;
@@ -262,12 +262,17 @@ header {
     height: 20px;
     cursor: pointer;
     }
-
+    .logo-container{
+        left: -80%;
+    }
     .sidebar {
-        left: -100%;
+        left: -80%;
         
     }
 
+    header{
+        background-color: #00234D;
+    }
     .sidebar a{
         font-size: 12px;
         padding: 6px 12px;
