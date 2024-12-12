@@ -89,7 +89,7 @@ require_once 'assets/component/check_login.php';
                             $prestasi[0]['status'] = 'ditolak';
                         } else if ($prestasi[0]['status'] == 'diterimaAdmin') {
                             $prestasi[0]['status'] = 'diterima';
-                        } else if ($hasil[0]['status'] == 'diproses' || $hasil[0]['status'] == 'diterimaDosen') {
+                        } else if ($prestasi[0]['status'] == 'diproses' || $prestasi[0]['status'] == 'diterimaDosen') {
                             $prestasi[0]['status'] = 'diproses';
                         }
                         ?>
@@ -101,7 +101,7 @@ require_once 'assets/component/check_login.php';
                         </div>
                         <div class="keterangan">
                             <label for="keterangan" style="font-weight: bold;">Keterangan :</label>
-                            <textarea id="keterangan" readonly><?= $hasil[0]['keterangan']?></textarea>
+                            <textarea id="keterangan" readonly><?= $prestasi[0]['keterangan']?></textarea>
                         </div>
                     </div>
 
