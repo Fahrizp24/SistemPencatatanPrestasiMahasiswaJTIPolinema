@@ -24,18 +24,20 @@
     </header>
     <main>
         <div class="news-container">
-            <img class="news-image" src="assets/img/news/juara1.png" alt="">
+            <img class="news-image" src="<?=$newsData['dokumentasiPath']?>" alt="">
             <div class="news-label">
                 <img src="assets/img/breaking-news.png" alt="">
                 <div class="news-content" style="display: block;">
 
-                    <div class="news-title">PENGHARGAAN "BEST NARATIVE DALAM AJANG PERLOMBAAN IT"</div>
+                    <div class="news-title"><?=$newsData['namaLomba']?></div>
                     <div class="news-ticker">
                         <div class="news-wrapper">
-                            <div class="news-item">Berita 1: Informasi Penting</div>
-                            <div class="news-item">Berita 2: Update Teknologi</div>
+                            <div class="news-item">
+                                <?=$newsData['nama']?> memenangkan Juara 1 pada Lomba <?=$newsData['namaLomba']?> di bidang <?=$newsData['bidang']?> tanggal <?=$newsData['waktu']?>
+                            </div>
+                            <!-- <div class="news-item">Berita 2: Update Teknologi</div>
                             <div class="news-item">Berita 3: Lomba IT Nasional</div>
-                            <div class="news-item">Berita 4: Acara Kampus</div>
+                            <div class="news-item">Berita 4: Acara Kampus</div> -->
                             <!-- Duplikat elemen untuk ilusi ticker -->
                             <!-- <div class="news-item">Berita 1: Informasi Penting</div>
                             <div class="news-item">Berita 2: Update Teknologi</div>

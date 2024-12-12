@@ -8,42 +8,49 @@ use PDOException;
 
 class landingPageModel extends Model
 {
-    function index($username, $password)
-    {
-        try {
-            $stmt = $this->_dbConnection->prepare("SELECT * FROM akun WHERE username = :username AND password = :password");
-            $stmt->bindParam(':username', $username);
-            $stmt->bindParam(':password', $password);
-            $stmt->execute();
-            $hasil = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($hasil) {
-                if ($hasil['status']=="aktif") {
-                    $_SESSION["session_username"] = $hasil['username'];
-                    $_SESSION["session_role"] = $hasil['role'];
-                    $_SESSION["session_status"] = 'aktif';
-                    return json_encode(["role" => $hasil['role'], "status" => "success", "message" => "Login successful"]);
-                } else if($hasil['status']=="lulus/pindah"){
-                    $_SESSION["session_username"] = $hasil['username'];
-                    $_SESSION["session_role"] = $hasil['role'];
-                    $_SESSION["session_status"] = 'lulus/pindah';
-                    return json_encode(["role" => $hasil['role'], "status" => "success", "message" => "Login successful"]);
-                }else if($hasil['status']=="pending"){
-                    return json_encode(["status" => "error", "message" => "Akun anda belum dikonfirmasi admin"]);
-                }else{
-                    return json_encode(["status" => "error", "message" => "Akun anda inaktif"]);
-                }
-            } else{
-                return json_encode(["status" => "error", "message" => "Username atau Password tidak sesuai"]);
-            }
-        } catch (PDOException $e) {
-            return json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);
-        }
+    function getLeaderBoard() {
+        $sql = "SELECT
+                    m.nama,
+                    m.namaProdi,
+                    SUM(p.poin) total_poin
+                FROM
+                    mahasiswa m
+                JOIN
+                    prestasi p
+                ON
+                    m.nim = p.nimMahasiswa
+                GROUP BY 
+                    nama, namaProdi
+                ORDER BY
+                    total_poin DESC";
+        
+        $stmt = $this->_dbConnection->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function logout()
-    {
-        session_unset();
-        session_destroy();
-    }
+    function getNewsData() {
+        $sql = "SELECT TOP 1
+                    p.namaLomba,
+                    m.nama,
+                    p.waktu,
+                    p.bidang,
+                    p.dokumentasiPath
+                FROM
+                    prestasi p
+                JOIN
+                    mahasiswa m
+                ON
+                    p.nimMahasiswa = m.nim
+                WHERE
+                    p.status = 'diterimaAdmin' AND p.jenis = 'Juara 1'
+                ORDER BY
+                    p.idPrestasi DESC";
 
+        $stmt = $this->_dbConnection->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
