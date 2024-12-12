@@ -23,7 +23,7 @@ $(document).ready(function () {
                         window.location.href = 'berandaDosen'
                     }
                 } else {
-                    $('#status').html('Username Atau Password Salah');
+                    $('#status').html(data.message);
                 }
             },
             error: function () {
@@ -48,7 +48,7 @@ $(document).ready(function () {
         var email = $('#email').val();
 
         $.ajax({
-            url: 'RegistresController',
+            url: 'registerAkun',
             type: 'POST',
             data: {
                 action: 'register', // Parameter untuk menentukan fungsi yang dipanggil
@@ -135,9 +135,6 @@ $(document).ready(function () {
     });
 
 
-    // $("button").click(function () {
-    //     $("#box").load("test-content.html");
-    // });
     $('#logout').click(function () {
         var formData = new FormData();
         formData.append('action', 'logout');
@@ -271,6 +268,8 @@ $(document).ready(function () {
             }
         });
     })
+
+    //TODO : nih dibawah buat apa yak
 
     $('#submit-point').submit(function (event) {
         event.preventDefault();

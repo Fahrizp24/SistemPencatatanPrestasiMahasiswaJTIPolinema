@@ -124,7 +124,7 @@ class AdminModel extends Model
 
     function getAkunPending() {
         $stmt = $this->_dbConnection->prepare("
-                    SELECT 
+                    SELECT
                 akun.username, 
                 akun.role, 
                 CASE 
@@ -147,6 +147,29 @@ class AdminModel extends Model
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function kelolaAkun($username, $status)
+    {
+        if ($status === 'diterima') {
+            $sql = "UPDATE akun SET status = 'aktif' WHERE username = '$username'";
+            $result = $this->_dbConnection->query($sql);
+
+            if ($result->rowCount() != 0) {
+                return json_encode(["status" => "success", "message" => "Akun Berhasil Diterima"]);
+            } else {
+                return json_encode(["status" => "error", "message" => "Akun Gagal Diterima"]);
+            }
+        } else if ($status === 'ditolak') {
+            $sql = "DELETE akun WHERE username = '$username'";
+            $result = $this->_dbConnection->query($sql);
+
+            if ($result->rowCount() != 0) {
+                return json_encode(["status" => "success", "message" => "Akun Berhasil Ditolak"]);
+            } else {
+                return json_encode(["status" => "error", "message" => "Akun Gagal Ditolak"]);
+            }
+        }
     }
 
 

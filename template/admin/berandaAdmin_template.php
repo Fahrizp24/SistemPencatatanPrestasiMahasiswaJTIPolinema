@@ -1,6 +1,4 @@
-<?php require_once 'assets/component/check_login.php';
-
-?>
+<?php require_once 'assets/component/check_login.php';?>
 
 <!DOCTYPE html>
 <html lang="id">

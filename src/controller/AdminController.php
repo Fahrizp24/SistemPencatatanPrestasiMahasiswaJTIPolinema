@@ -92,6 +92,17 @@ class AdminController extends Controller
         $this->view->setTemplate('template/admin/kontrolAkun_template.php');
         $this->view->render();
     }
+
+    public function kelolaAkun()
+    {   
+        $data = $_POST;
+        if (isset($data['action'])) {
+            $username = htmlspecialchars($data['username']);
+            $status = htmlspecialchars($data['status']);
+            echo $this->_model->kelolaAkun($username,$status);
+        }
+        exit;
+    }
 }
 
 ?>

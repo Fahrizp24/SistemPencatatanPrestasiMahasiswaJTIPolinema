@@ -27,13 +27,13 @@ class LoginModel extends Model
                     $_SESSION["session_role"] = $hasil['role'];
                     $_SESSION["session_status"] = 'lulus/pindah';
                     return json_encode(["role" => $hasil['role'], "status" => "success", "message" => "Login successful"]);
+                }else if($hasil['status']=="pending"){
+                    return json_encode(["status" => "error", "message" => "Akun anda belum dikonfirmasi admin"]);
                 }else{
-                    return json_encode(["status" => "error", "message" => "Username atau Password tidak sesuai"]);
+                    return json_encode(["status" => "error", "message" => "Akun anda inaktif"]);
                 }
-            } else if($hasil['status']=="pending"){
-                return json_encode(["status" => "error", "message" => "Akun anda belum dikonfirmasi admin"]);
-            }else{
-                return json_encode(["status" => "error", "message" => "Akun anda inaktif"]);
+            } else{
+                return json_encode(["status" => "error", "message" => "Username atau Password tidak sesuai"]);
             }
         } catch (PDOException $e) {
             return json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);

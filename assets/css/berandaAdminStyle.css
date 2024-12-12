@@ -93,7 +93,7 @@ canvas {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    /* margin-top: 20px; */
+    margin: -30px 0 -30px 0;
 }
 
 

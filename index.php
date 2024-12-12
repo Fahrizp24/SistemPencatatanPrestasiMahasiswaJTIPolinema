@@ -30,6 +30,7 @@ $app->setRoutes([
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/index' => 'LoginController@index',   
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/login' => 'LoginController@index',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/register' => 'RegisterController@index',
+    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/registerAkun' => 'RegisterController@register',
 
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/berandaMahasiswa' => 'MahasiswaController@beranda',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/detailPrestasiMahasiswa' => 'MahasiswaController@detailPrestasi',
@@ -53,6 +54,7 @@ $app->setRoutes([
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/pengajuanAdmin' => 'AdminController@pengajuan',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/pengajuanAdmin/kelolaPrestasi' => 'AdminController@kelolaPrestasi',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/kontrolAkunAdmin' => 'AdminController@kontrolAkun',
+    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/kontrolAkunAdmin/kelolaAkun' => 'AdminController@kelolaAkun',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/pengaturanAdmin' => 'AdminController@pengaturan',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/editTingkatAndKategori' => 'AdminController@editTable'
 

@@ -20,8 +20,14 @@ class RegisterController extends Controller
 
     public function index()
     {
+        $this->view->setTemplate('template/register_template.php');
+        $this->view->render();
+    }
+
+    public function register()
+    {
         $data = $_POST;
-        if (isset($data['action']) && $data['action'] === 'register') {
+        if (isset($data['action'])) {
             $username = htmlspecialchars($data['username']);
             $password = htmlspecialchars($data['password']);
             $role = $data['role'];
@@ -29,7 +35,7 @@ class RegisterController extends Controller
             $prodi = $data['prodi'];
             $email = htmlspecialchars($data['email']);
             
-            $this->_model->register(
+            echo $this->_model->register(
                 $data['username'],
                 $data['password'], 
                 $data['role'],         
@@ -38,13 +44,6 @@ class RegisterController extends Controller
                 $data['email']      
             );
         }
-
-        // Data untuk ditampilkan di tabel. Terlepas ada submit atau tidak
-        // $daftarKontak = $this->_model->ambilSemuaKontak();
-
-        $this->view->setTemplate('template/register_template.php');
-        // $this->view->setData(['daftarKontak' => $daftarKontak]);
-        $this->view->render();
     }
 }
 

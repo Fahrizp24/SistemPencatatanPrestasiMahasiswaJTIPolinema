@@ -12,20 +12,22 @@ class RegisterModel extends Model
     {
         $sql = "SELECT * FROM akun WHERE username = '$username'";
         $statement = $this->_dbConnection->prepare($sql);
-        $success = $statement->execute();
-
+        $statement->execute();
+        $success = $statement->fetch(PDO::FETCH_ASSOC);
         if ($success) {
             return json_encode(["status" => "error", "message" => "NIM/NIP Telah Terdaftar!"]);
         }
 
         $sql = "SELECT * FROM mahasiswa WHERE email = '$email'";
         $statement = $this->_dbConnection->prepare($sql);
-        $successMhs = $statement->execute();
+        $statement->execute();
+        $successMhs = $statement->fetch(PDO::FETCH_ASSOC);
 
         $sql = "SELECT * FROM dosen WHERE email = '$email'";
         $statement = $this->_dbConnection->prepare($sql);
-        $successDsn = $statement->execute();
-
+        $statement->execute();
+        $successDsn = $statement->fetch(PDO::FETCH_ASSOC);
+        
         if ($successMhs || $successDsn) {
             return json_encode(["status" => "error", "message" => "Email Telah Terdaftar!"]);
         }
