@@ -65,73 +65,73 @@ VALUES
 INSERT INTO prestasi (tanggalPengajuan, namaLomba, waktu, penyelenggara, tingkat, bidang, jenis, nipDosenPembimbing, nimMahasiswa, sertifikatPath, dokumentasiPath, suratTugasPath, idAdmin, status, poin, keterangan)
 VALUES 
 ('2024-01-01','ROAD TO IPEC', '2024-01-15', 'ITDEC POLINEMA','Regional', 'Pidato Bahasa Inggris','Juara 1', '198010102005011001', '2341720104',
-'../../config/media/sertifikat/1_2341720104.jpg', '../../config/media/dokumentasi/1_2341720104.jpg', '../../config/media/suratTugas/1_2341720104.jpg', NULL, 'diproses', NULL, NULL),
+'assets/filemedia/sertifikat/1_2341720104.jpg', 'assets/filemedia/dokumentasi/1_2341720104.jpg', 'assets/filemedia/suratTugas/1_2341720104.jpg', NULL, 'diproses', NULL, NULL),
 
 ('2024-02-10','Kompetisi Robotik Nasional', '2024-02-10', 'Komunitas Robot Indonesia','Nasional', 'Robot Line Follower','Juara 1', '198010102005011001', '2341720104', 
-'../../config/media/sertifikat/2_2341720104.jpg', '../../config/media/dokumentasi/2_2341720104.jpg', '../../config/media/suratTugas/2_2341720104.jpg', '1', 'diterimaAdmin', 10, NULL),
+'assets/filemedia/sertifikat/2_2341720104.jpg', 'assets/filemedia/dokumentasi/2_2341720104.jpg', 'assets/filemedia/suratTugas/2_2341720104.jpg', '1', 'diterimaAdmin', 10, NULL),
 
 ('2024-03-13','KMIPN', '2024-03-05', 'Puspresnas','Nasional', 'Desain Grafis','Juara 2', '198010102005011001', '2341720104',
-'../../config/media/sertifikat/3_2341720104.jpg', '../../config/media/dokumentasi/3_2341720104.jpg', '../../config/media/suratTugas/3_2341720104.jpg', '1', 'ditolak', 0, 'Dokumentasi Tidak Sesuai'),
+'assets/filemedia/sertifikat/3_2341720104.jpg', 'assets/filemedia/dokumentasi/3_2341720104.jpg', 'assets/filemedia/suratTugas/3_2341720104.jpg', '1', 'ditolak', 0, 'Dokumentasi Tidak Sesuai'),
 
 ('2024-04-11','KMIPN', '2024-09-30', 'Puspresnas','Nasional', 'Desain Grafis','Juara 2', '197605152009122001', '2341720117',
-'../../config/media/sertifikat/4_2341720117.jpg', '../../config/media/dokumentasi/4_2341720117.jpg', '../../config/media/suratTugas/4_2341720117.jpg', NULL, 'diproses', NULL, NULL),
+'assets/filemedia/sertifikat/4_2341720117.jpg', 'assets/filemedia/dokumentasi/4_2341720117.jpg', 'assets/filemedia/suratTugas/4_2341720117.jpg', NULL, 'diproses', NULL, NULL),
 
 ('2024-05-01','Tech in Asia', '2024-03-10', 'ITDEC POLINEMA','Nasional', 'Pidato Bahasa Inggris','Juara 2', '197605152009122001', '2341720117',
-'../../config/media/sertifikat/5_2341720117.jpg', '../../config/media/dokumentasi/5_2341720117.jpg', '../../config/media/suratTugas/5_2341720117.jpg', '1', 'diterimaAdmin', 10, NULL),
+'assets/filemedia/sertifikat/5_2341720117.jpg', 'assets/filemedia/dokumentasi/5_2341720117.jpg', 'assets/filemedia/suratTugas/5_2341720117.jpg', '1', 'diterimaAdmin', 10, NULL),
 
 ('2024-06-13','GEMASTIK', '2024-10-02', 'Puspresnas','Nasional', 'Lomba Esai', 'Juara 3','197605152009122001', '2341720117',
-'../../config/media/sertifikat/6_2341720117.jpg', '../../config/media/dokumentasi/6_2341720117.jpg', '../../config/media/suratTugas/6_2341720117.jpg', '1', 'ditolak', 0, 'Surat Tugas Tidak Sesuai'),
+'assets/filemedia/sertifikat/6_2341720117.jpg', 'assets/filemedia/dokumentasi/6_2341720117.jpg', 'assets/filemedia/suratTugas/6_2341720117.jpg', '1', 'ditolak', 0, 'Surat Tugas Tidak Sesuai'),
 
 ('2024-07-22','ROAD TO IPEC', '2024-03-10', 'ITDEC POLINEMA','Regional', 'Pidato Bahasa Inggris', 'Juara 2','198107052005011002', '2341720177',
-'../../config/media/sertifikat/7_2341720177.jpg', '../../config/media/dokumentasi/7_2341720177.jpg', '../../config/media/suratTugas/7_2341720177.jpg', NULL, 'diproses', NULL, NULL),
+'assets/filemedia/sertifikat/7_2341720177.jpg', 'assets/filemedia/dokumentasi/7_2341720177.jpg', 'assets/filemedia/suratTugas/7_2341720177.jpg', NULL, 'diproses', NULL, NULL),
 
 ('2024-08-21','ALSA UGM', '2024-05-20', 'UGM','Nasional', 'Debat', 'Juara 3','198107052005011002', '2341720177',
-'../../config/media/sertifikat/8_2341720177.jpg', '../../config/media/dokumentasi/8_2341720177.jpg', '../../config/media/suratTugas/8_2341720177.jpg', '2', 'diterimaDosen', NULL, NULL),
+'assets/filemedia/sertifikat/8_2341720177.jpg', 'assets/filemedia/dokumentasi/8_2341720177.jpg', 'assets/filemedia/suratTugas/8_2341720177.jpg', '2', 'diterimaDosen', NULL, NULL),
 
 ('2024-09-12','ALSA UGM', '2024-05-20', 'UGM','Nasional', 'Debat', 'Harapan 1','198107052005011002', '2341720177',
-'../../config/media/sertifikat/9_2341720177.jpg', '../../config/media/dokumentasi/9_2341720177.jpg', '../../config/media/suratTugas/9_2341720177.jpg', '2', 'diterimaAdmin',10, NULL),
+'assets/filemedia/sertifikat/9_2341720177.jpg', 'assets/filemedia/dokumentasi/9_2341720177.jpg', 'assets/filemedia/suratTugas/9_2341720177.jpg', '2', 'diterimaAdmin',10, NULL),
 
 ('2024-10-08','4C National Competition', '2024-05-20', 'FILKOM UB','Nasional', 'Penulisan Ilmiah','Harapan 3', '198107052005011002', '2341720177',
-'../../config/media/sertifikat/10_2341720177.jpg', '../../config/media/dokumentasi/10_2341720177.jpg', '../../config/media/suratTugas/10_2341720177.jpg', '2', 'ditolak', 0, 'Nama Lomba Tidak Sesuai'),
+'assets/filemedia/sertifikat/10_2341720177.jpg', 'assets/filemedia/dokumentasi/10_2341720177.jpg', 'assets/filemedia/suratTugas/10_2341720177.jpg', '2', 'ditolak', 0, 'Nama Lomba Tidak Sesuai'),
 
 ('2024-11-02','GEMASTIK', '2024-05-20', 'Puspresnas','Nasional', 'Hackathon','Juara 2', '198108102005012002', '2341720254',
-'../../config/media/sertifikat/11_2341720254.jpg', '../../config/media/dokumentasi/11_2341720254.jpg', '../../config/media/suratTugas/11_2341720254.jpg', NULL, 'diproses', NULL, NULL),
+'assets/filemedia/sertifikat/11_2341720254.jpg', 'assets/filemedia/dokumentasi/11_2341720254.jpg', 'assets/filemedia/suratTugas/11_2341720254.jpg', NULL, 'diproses', NULL, NULL),
 
 ('2024-12-10','4C National Competition', '2024-07-01', 'FILKOM UB','Nasional', 'Desain Grafis','Juara 3', '198108102005012002', '2341720254',
-'../../config/media/sertifikat/12_2341720254.jpg', '../../config/media/dokumentasi/12_2341720254.jpg', '../../config/media/suratTugas/12_2341720254.jpg', '2', 'diterimaAdmin', 10, NULL),
+'assets/filemedia/sertifikat/12_2341720254.jpg', 'assets/filemedia/dokumentasi/12_2341720254.jpg', 'assets/filemedia/suratTugas/12_2341720254.jpg', '2', 'diterimaAdmin', 10, NULL),
 
 ('2024-01-02','Compfest UI', '2024-07-01', 'FILKOM UI','Nasional', 'Cyber Security','Juara 2', '198108102005012002', '2341720254',
-'../../config/media/sertifikat/13_2341720254.jpg', '../../config/media/dokumentasi/13_2341720254.jpg', '../../config/media/suratTugas/13_2341720254.jpg', '2', 'ditolak', 0, 'Nama Lomba Tidak Sesuai'),
+'assets/filemedia/sertifikat/13_2341720254.jpg', 'assets/filemedia/dokumentasi/13_2341720254.jpg', 'assets/filemedia/suratTugas/13_2341720254.jpg', '2', 'ditolak', 0, 'Nama Lomba Tidak Sesuai'),
 
 ('2024-02-19','Compfest UI', '2024-05-20', 'FILKOM UI','Nasional', 'Cyber Security','Juara 2', '198108092010121002', '2341720206',
-'../../config/media/sertifikat/14_2341720206.jpg', '../../config/media/dokumentasi/14_2341720206.jpg', '../../config/media/suratTugas/14_2341720206.jpg', NULL, 'diproses', NULL, NULL),
+'assets/filemedia/sertifikat/14_2341720206.jpg', 'assets/filemedia/dokumentasi/14_2341720206.jpg', 'assets/filemedia/suratTugas/14_2341720206.jpg', NULL, 'diproses', NULL, NULL),
 
 ('2024-03-12','KMIPN', '2024-06-15', 'Puspresnas','Nasional', 'Desain Grafis','Harapan 1', '198108092010121002', '2341720206',
-'../../config/media/sertifikat/15_2341720206.jpg', '../../config/media/dokumentasi/15_2341720206.jpg', '../../config/media/suratTugas/15_2341720206.jpg', '2', 'diterimaAdmin', 10, NULL),
+'assets/filemedia/sertifikat/15_2341720206.jpg', 'assets/filemedia/dokumentasi/15_2341720206.jpg', 'assets/filemedia/suratTugas/15_2341720206.jpg', '2', 'diterimaAdmin', 10, NULL),
 
 ('2024-04-11','ROAD TO IPEC', '2024-10-02', 'ITDEC POLINEMA','Regional', 'Bahasa Inggris','Harapan 1', '198108092010121002', '2341720206',
-'../../config/media/sertifikat/16_2341720206.jpg', '../../config/media/dokumentasi/16_2341720206.jpg', '../../config/media/suratTugas/16_2341720206.jpg', '2', 'ditolak', 0, 'Tanggal Lomba Tidak Sesuai'),
+'assets/filemedia/sertifikat/16_2341720206.jpg', 'assets/filemedia/dokumentasi/16_2341720206.jpg', 'assets/filemedia/suratTugas/16_2341720206.jpg', '2', 'ditolak', 0, 'Tanggal Lomba Tidak Sesuai'),
 
 ('2024-05-08','Tech in Asia', '2024-03-10', 'ITDEC POLINEMA','Nasional', 'Pidato Bahasa Inggris','Juara 2', '197605152009122001', '2341720117',
-'../../config/media/sertifikat/17_2341720117.jpg', '../../config/media/dokumentasi/17_2341720117.jpg', '../../config/media/suratTugas/17_2341720117.jpg', '1', 'diterimaAdmin', 10, NULL),
+'assets/filemedia/sertifikat/17_2341720117.jpg', 'assets/filemedia/dokumentasi/17_2341720117.jpg', 'assets/filemedia/suratTugas/17_2341720117.jpg', '1', 'diterimaAdmin', 10, NULL),
 
 ('2024-06-25','4C National Competition', '2024-05-20', 'FILKOM UB','Nasional', 'Penulisan Ilmiah','Finalis', '198107052005011002', '2341720117',
-'../../config/media/sertifikat/18_2341720117.jpg', '../../config/media/dokumentasi/18_2341720117.jpg', '../../config/media/suratTugas/18_2341720117.jpg', '2', 'ditolak', 0, 'Kategori Tidak Sesuai'),
+'assets/filemedia/sertifikat/18_2341720117.jpg', 'assets/filemedia/dokumentasi/18_2341720117.jpg', 'assets/filemedia/suratTugas/18_2341720117.jpg', '2', 'ditolak', 0, 'Kategori Tidak Sesuai'),
 
 ('2024-08-13','KMIPN', '2024-03-05', 'Puspresnas','Nasional', 'Desain Grafis','Juara 2', '198010102005011001', '2341720104',
-'../../config/media/sertifikat/19_2341720104.jpg', '../../config/media/dokumentasi/19_2341720104.jpg', '../../config/media/suratTugas/19_2341720104.jpg', NULL, 'diterimaDosen', NULL, NULL),
+'assets/filemedia/sertifikat/19_2341720104.jpg', 'assets/filemedia/dokumentasi/19_2341720104.jpg', 'assets/filemedia/suratTugas/19_2341720104.jpg', NULL, 'diterimaDosen', NULL, NULL),
 
 ('2024-06-13','GEMASTIK', '2024-04-02', 'Puspresnas','Nasional', 'Lomba Esai', 'Juara 3','198010102005011001', '2341720117',
-'../../config/media/sertifikat/20_2341720117.jpg', '../../config/media/dokumentasi/20_2341720117.jpg', '../../config/media/suratTugas/20_2341720117.jpg', NULL, 'diterimaDosen', NULL, NULL),
+'assets/filemedia/sertifikat/20_2341720117.jpg', 'assets/filemedia/dokumentasi/20_2341720117.jpg', 'assets/filemedia/suratTugas/20_2341720117.jpg', NULL, 'diterimaDosen', NULL, NULL),
 
 ('2024-07-02','Compfest UI', '2024-07-01', 'FILKOM UI','Nasional', 'Cyber Security','Juara 2', '198010102005011001', '2341720254',
-'../../config/media/sertifikat/21_2341720254.jpg', '../../config/media/dokumentasi/21_2341720254.jpg', '../../config/media/suratTugas/21_2341720254.jpg', NULL, 'diterimaDosen', NULL, NULL),
+'assets/filemedia/sertifikat/21_2341720254.jpg', 'assets/filemedia/dokumentasi/21_2341720254.jpg', 'assets/filemedia/suratTugas/21_2341720254.jpg', NULL, 'diterimaDosen', NULL, NULL),
 
 ('2024-08-11','ROAD TO IPEC', '2024-10-02', 'ITDEC POLINEMA','Regional', 'Bahasa Inggris','Harapan 1', '198010102005011001', '2341720206',
-'../../config/media/sertifikat/22_2341720206.jpg', '../../config/media/dokumentasi/22_2341720206.jpg', '../../config/media/suratTugas/22_2341720206.jpg', NULL, 'diterimaDosen', NULL, NULL),
+'assets/filemedia/sertifikat/22_2341720206.jpg', 'assets/filemedia/dokumentasi/22_2341720206.jpg', 'assets/filemedia/suratTugas/22_2341720206.jpg', NULL, 'diterimaDosen', NULL, NULL),
 
 ('2024-09-08','4C National Competition', '2024-05-20', 'FILKOM UB','Nasional', 'Penulisan Ilmiah','Harapan 3', '198107052005011002', '2341720177',
-'../../config/media/sertifikat/23_2341720177.jpg', '../../config/media/dokumentasi/23_2341720177.jpg', '../../config/media/suratTugas/23_2341720177.jpg', NULL, 'diterimaDosen', NULL, NULL);
+'assets/filemedia/sertifikat/23_2341720177.jpg', 'assets/filemedia/dokumentasi/23_2341720177.jpg', 'assets/filemedia/suratTugas/23_2341720177.jpg', NULL, 'diterimaDosen', NULL, NULL);
 
 
 

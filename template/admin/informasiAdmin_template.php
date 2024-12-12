@@ -55,7 +55,7 @@
             </div>
             <div class="footer">
             ©2024 | SPPM JTI POLINEMA
-                <img src="assets/view/image/LogoPolinema.png" alt="logo POLINEMA" width="20" height="20">
+                <img src="assets/img/LogoPolinema.png" alt="logo POLINEMA" width="20" height="20">
             </div>
         </div>
     </div>
