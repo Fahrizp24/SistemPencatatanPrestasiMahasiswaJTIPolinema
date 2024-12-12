@@ -5,6 +5,8 @@
 <html>
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         SPPM POLINEMA
     </title>
@@ -17,8 +19,18 @@
 </head>
 
 <body>
+<header>
+        <div class="logo-container">
+        <img src="assets/img/jtiSppmPolinema.png" alt="SPPM POLINEMA Logo" />
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div id="sidebar-container"></div>
     <div class="container">
-        <?php require_once 'assets/component/header.html' ?>
         <?php require_once 'assets/component/sidebarMahasiswa.html' ?>
         <div class="content">
             <div class="main-content">
@@ -200,6 +212,22 @@
                     descriptionSuratTugas.innerHTML = 'JPG, JPEG atau PNG, ukuran file tidak lebih dari 2MB';
                 }
             });
+            const menuToggle = document.getElementById('menu-toggle');
+const sidebarContainer = document.getElementById('sidebar-container');
+
+// Memuat sidebar.html ke dalam sidebar-container
+fetch('assets/component/sidebarMahasiswa.html')
+    .then(response => response.text())
+    .then(html => {
+        sidebarContainer.innerHTML = html;
+        const sidebar = document.getElementById('sidebar');
+        
+        // Menambahkan event listener setelah sidebar dimuat
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    })
+    .catch(error => console.error('Error loading sidebar:', error));
         </script>
 </body>
 
