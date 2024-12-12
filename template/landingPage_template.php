@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPPM POLINEMA</title>
-    <link rel="stylesheet" href="../model/landingStyle.css">
+    <link rel="stylesheet" href="assets/css/landingStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="icon" href="../image/SPPMicon.png">
+    <link rel="icon" href="assets/img/SPPMicon.png">
 
 </head>
 
 <body>
     <header>
-        <img src="image/logoSPPM.png" alt="SPPM logo">
+        <img src="assets/img/logoSPPM.png" alt="SPPM logo">
         <div class="login">
             <a href="index">
                 <button type="submit" class="login">Login</button>
@@ -24,9 +24,9 @@
     </header>
     <main>
         <div class="news-container">
-            <img class="news-image" src="image/news/juara1.png" alt="">
+            <img class="news-image" src="assets/img/news/juara1.png" alt="">
             <div class="news-label">
-                <img src="image/breaking-news.png" alt="">
+                <img src="assets/img/breaking-news.png" alt="">
                 <div class="news-content" style="display: block;">
 
                     <div class="news-title">PENGHARGAAN "BEST NARATIVE DALAM AJANG PERLOMBAAN IT"</div>
@@ -66,7 +66,7 @@
             </div>
         </div>
     </main>
-    <?php require_once 'component/footer.html' ?>
+    <?php require_once 'assets/component/footer.html' ?>
     <script>
         window.onload = () => {
             const newsWrapper = document.querySelector('.news-wrapper');

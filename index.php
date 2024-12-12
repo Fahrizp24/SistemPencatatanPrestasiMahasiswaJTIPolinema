@@ -13,7 +13,8 @@ require_once 'framework/View.php';
 require_once 'framework/Model.php';
 
 require_once 'src/controller/LoginController.php';
-require_once 'src/controller/RegisterController.php';
+require_once 'src/controller/LoginController.php';
+require_once 'src/controller/LandingPageController.php';
 require_once 'src/controller/MahasiswaController.php';
 require_once 'src/controller/DosenController.php';
 require_once 'src/controller/AdminController.php';
@@ -24,7 +25,7 @@ $app = new App();
 
 // Atur routes-nya
 $app->setRoutes([
-    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/' => 'LoginController@index',
+    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/' => 'LandingPageController@index',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/logout' => 'LoginController@index',   
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/LoginController' => 'LoginController@index',   
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/index' => 'LoginController@index',   
