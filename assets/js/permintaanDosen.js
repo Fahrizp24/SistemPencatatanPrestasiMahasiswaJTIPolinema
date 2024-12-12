@@ -54,24 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Event untuk menutup modal
     closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    // Tombol "Tolak Verifikasi"
-    tolakButton.addEventListener("click", () => {
-        alasanSection.style.display = "block"; // Tampilkan kolom alasan
-        teruskanButton.style.display = "none"; // Sembunyikan tombol "Teruskan ke Admin"
-
-        tolakButton.textContent = "Kirim Penolakan"; // Ubah teks tombol
-        tolakButton.addEventListener("click", () => {
-            const alasan = document.getElementById("alasan").value;
-            if (alasan.trim() === "") {
-                alert("Harap masukkan alasan penolakan.");
-            } else {
-                alert("Pengajuan telah ditolak dengan alasan: " + alasan);
-                modal.style.display = "none"; // Tutup modal
-            }
-        });
+        location.reload();
     });
 
     // Tombol "Teruskan ke Admin"
@@ -102,18 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Terjadi kesalahan saat mengirim data.");
             }
         });
-
-        modal.style.display = "none";
     });
 
-    // Menutup modal jika area di luar modal diklik
-    window.addEventListener("click", (event) => {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    });
-
-
+    // Tombol "Tolak Verifikasi"
     tolakButton.addEventListener("click", () => {
         alasanSection.style.display = "block"; // Tampilkan kolom alasan
         teruskanButton.style.display = "none"; // Sembunyikan tombol "Teruskan ke Admin"
@@ -152,6 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
             }
+            
         });
+    });
+
+    // Menutup modal jika area di luar modal diklik
+    window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+            location.reload();
+        }
     });
 });
