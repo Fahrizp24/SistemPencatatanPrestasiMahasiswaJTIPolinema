@@ -11,9 +11,9 @@ class Model
     public function __construct()
     {
         try {
-            $serverName = "REEE\\sqlexpress";
+            //$serverName = "REEE\\sqlexpress";
             //$serverName = "LAPTOP-0H3EPKAS\SQLEXPRESS"; 
-            // $serverName = "LAPTOP-MLPOEBU2\SQLEXPRESS";
+            $serverName = "LAPTOP-MLPOEBU2\SQLEXPRESS";
             //$serverName = "DESKTOP-RF6CM3D\SQLEXPRESS";
             //$serverName = "ABDUL\SQLEXPRESS";
             $database = "SistemPrestasi";
