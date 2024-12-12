@@ -9,6 +9,37 @@ body {
     min-height: 100vh;
 }
 
+.logo-container {
+    width: 20%; /* Logo container width */
+    height: 100%;
+    background-color: #00234D; /* Full background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 80%; /* Adjust logo size within the container */
+    max-height: 80%; /* Keep within bounds */
+    object-fit: contain;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: #1a2b4c;
+    border-radius: 3px;
+}
+
 .main-content {
     flex-grow: 1;
     background-color: #ffffff;
@@ -148,4 +179,41 @@ table td .status-diproses{
 .alasan-section textarea {
     border-radius: 10px;
     border-color: #00234D;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Pastikan z-index lebih tinggi dari header */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    }
+
+    .sidebar {
+        left: -100%;
+        
+    }
+
+    .sidebar a{
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .logout button {
+        padding: 6px 12px;
+    }
+
+    .sidebar.active {
+        left: 0; /* Sidebar muncul saat toggle diaktifkan */
+    }
+
+    .content {
+        margin-left: 0;
+    }
 }
