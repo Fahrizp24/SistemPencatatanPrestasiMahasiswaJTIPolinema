@@ -31,7 +31,7 @@ class RegisterModel extends Model
         }
 
         $sql = "INSERT INTO akun (username, password, role, status)
-            VALUES ('$username', '$password', '$role', 'aktif')";
+            VALUES ('$username', '$password', '$role', 'pending')";
         $statement = $this->_dbConnection->prepare($sql);
         $success = $statement->execute();
 
@@ -47,7 +47,7 @@ class RegisterModel extends Model
         $success = $statement->execute();
 
         if ($success) {
-            return json_encode(["status" => "success", "message" => "Register successful"]);
+            return json_encode(["status" => "success", "message" => "Register berhasil. Silahkan tunggu validasi admin"]);
         } else {
             return json_encode(["status" => "error", "message" => "Input Register tidak sesuai"]);
         }
