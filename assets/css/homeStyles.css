@@ -122,7 +122,9 @@ header {
 }
 
 .content {
-    width: 70%;
+    /* width: 70%; */
+    width: 77%;
+
     flex-grow: 1;
     padding: 20px;
     margin-left: 20%;
