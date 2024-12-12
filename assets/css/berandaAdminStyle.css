@@ -143,6 +143,14 @@ canvas {
     font-size: 14px;
 }
 
+.modal-section img {
+    width: 100%;        /* Membuat gambar responsif */
+    max-width: 400px;   /* Atur lebar maksimal gambar agar tidak terlalu besar */
+    height: auto;       /* Menjaga rasio aspek gambar */
+    object-fit: contain; /* Mengatur agar gambar tetap proporsional */
+}
+
+
 .close {
     color: #aaa;
     float: right;
