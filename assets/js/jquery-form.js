@@ -119,6 +119,7 @@ $(document).ready(function () {
                     var data = JSON.parse(response);  // Pastikan response JSON valid
                     console.log("Parsed Data: ", data);
                     if (data.status === 'success') {
+                        document.getElementById("pengajuanForm").reset();
                         $('#status').html(data.message);
                     } else {
                         $('#status').html(data.message);
