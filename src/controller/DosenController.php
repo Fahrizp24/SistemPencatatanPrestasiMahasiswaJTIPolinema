@@ -56,20 +56,18 @@ class DosenController extends Controller
         $this->view->render();
     }
 
-    public function updateStatusByDosen()
-    {   
+    public function updateStatusByDosen(){   
         $data = $_POST;
-        if (isset($data['updateStatus'])) {
-            $idPrestasi = htmlspecialchars($data['idPrestasi']);
-            $status = htmlspecialchars($data['status']);
-            $keterangan = htmlspecialchars($data['keterangan']);
-            echo $this->_model->updateStatusByDosen($idPrestasi,$status,$keterangan);
-        }
+        $idPrestasi = htmlspecialchars($data['idPrestasi']);
+        $status = htmlspecialchars($data['status']);
+        $keterangan = htmlspecialchars($data['keterangan']);
+        echo $this->_model->updateStatusByDosen($idPrestasi,$status,$keterangan);
+    
     }
 
     public function updateProfil() {
         $data = $_POST;
-        if ( $data['updateProfil']) {
+        if ($data['updateProfil']) {
             $nip = $_SESSION['session_username'];
             $nama = htmlspecialchars($data['nama']);
             $email = htmlspecialchars($data['email']);        

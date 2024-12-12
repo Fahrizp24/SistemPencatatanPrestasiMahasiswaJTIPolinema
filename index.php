@@ -44,6 +44,7 @@ $app->setRoutes([
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/profilDosen' => 'DosenController@profil',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/permintaanDosen' => 'DosenController@permintaan',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/riwayatPrestasiDosen' => 'DosenController@riwayatPrestasi',
+    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/teruskanDosen' => 'DosenController@updateStatusByDosen',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/updateProfilDsn' => 'DosenController@updateProfil',
 
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/berandaAdmin' => 'AdminController@beranda',
