@@ -78,10 +78,10 @@
                     <div class="add-level">+ Tambah Tingkat</div>
                     <form id="tambahTingkat">
                         <div class="add-level-form">
-                            <input type="text" name="nama" id="nama" placeholder="Masukkan nama tingkat baru">
+                            <input type="text" name="nama" id="nama" placeholder="Masukkan nama tingkat baru" required>
                         </div>
                         <div class="action-buttons-tingkat">
-                            <button class="cancel-button">Batal</button>
+                            <button type="reset" class="cancel-button">Batal</button>
                             <button type="submit" name="submit">Tambah</button>
                         </div>
                     </form>
@@ -107,7 +107,7 @@
                     <div class="add-category">+ Tambah kategori</div>
                     <form id="tambahKategori">
                         <div class="add-category-form">
-                            <input type="text" name="nama" id="nama" placeholder="Masukkan nama kategori baru">
+                            <input type="text" name="nama" id="nama" placeholder="Masukkan nama kategori baru" required>
                         </div>
                         <div class="action-buttons-category">
                             <button type="reset" class="cancel-button">Batal</button>
