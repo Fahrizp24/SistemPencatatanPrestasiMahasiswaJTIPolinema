@@ -87,10 +87,14 @@
     <script>
         // Mengambil data dari PHP
         const jumlahPrestasi = <?php echo json_encode($chart); ?>;
+        const tahunAjaran = <?php echo json_encode($TAChart); ?>;
 
         // Mengakses elemen pertama dari array jumlahPrestasi karena nilai yang didapat dari json_encode adalah sebuah array
         const teknikInformatika = jumlahPrestasi[0].TeknikInformatika;
         const sistemInformasiBisnis = jumlahPrestasi[0].SistemInformasiBisnis;
+
+        const th1 = tahunAjaran[0].th1;
+        const th2 = tahunAjaran[0].th2;
 
         getPieChart(
             ['Teknik Informatika', 'Sistem Informasi Bisnis'],
@@ -103,7 +107,7 @@
             data: {
                 labels: ['T.A. 2023/2024', 'T.A. 2024/2025'], // Label pie chart
                 datasets: [{
-                    data: [60, 40], // Data persentase untuk setiap label
+                    data: [th1, th2], // Data persentase untuk setiap label
                     backgroundColor: ['#006400', '#FFD700'], // Warna pie chart
                     borderColor: ['#FFFFFF', '#FFFFFF'], // Warna border
                     borderWidth: 2 // Lebar border

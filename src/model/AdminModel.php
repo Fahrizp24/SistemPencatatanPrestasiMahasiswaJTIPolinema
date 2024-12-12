@@ -44,6 +44,20 @@ class AdminModel extends Model
         return [];
     }
 
+    function getTAChart() {
+        $sql = "SELECT 
+            COUNT(CASE WHEN tanggalPengajuan > '01/08/2023' AND tanggalPengajuan <= '01/07/2024' THEN 1 END) AS th1,
+            COUNT(CASE WHEN tanggalPengajuan > '01/08/2024' AND tanggalPengajuan <= '01/07/2025' THEN 1 END) AS th2
+            FROM prestasi";
+
+        $stmt = $this->_dbConnection->prepare($sql);
+        $success = $stmt->execute();
+        if ($success) {
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return [];
+    }
+
     function getDetailPrestasi($idPrestasi)
     {
         $stmt = $this->_dbConnection->prepare("SELECT * FROM prestasi WHERE idPrestasi = :value1");

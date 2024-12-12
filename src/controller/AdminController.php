@@ -21,7 +21,8 @@ class AdminController extends Controller
     {
         $table = $this->_model->getTablePrestasiNotInDiprosesAdmin();
         $chart = $this->_model->getDataChart();
-        $this->view->setData(['prestasi' => $table, 'chart' => $chart]);
+        $TAChart = $this->_model->getTAChart();
+        $this->view->setData(['prestasi' => $table, 'chart' => $chart, 'TAChart' => $TAChart]);
 
         $this->view->setTemplate('template/admin/berandaAdmin_template.php');
         $this->view->render();
