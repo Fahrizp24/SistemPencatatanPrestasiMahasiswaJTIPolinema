@@ -31,7 +31,6 @@ class AdminModel extends Model
         return [];
     }
 
-
     function getDataChart()
     {
         $chart = $this->_dbConnection->prepare(("SELECT 
@@ -121,6 +120,33 @@ class AdminModel extends Model
                 return json_encode(["status" => "error", "message" => "Prestasi Gagal Ditolak"]);
             }
         }
+    }
+
+    function getAkunPending() {
+        $stmt = $this->_dbConnection->prepare("
+                    SELECT 
+                akun.username, 
+                akun.role, 
+                CASE 
+                    WHEN akun.role = 'mahasiswa' THEN mahasiswa.nama 
+                    WHEN akun.role = 'dosen' THEN dosen.nama 
+                END AS nama,
+                CASE 
+                    WHEN akun.role = 'mahasiswa' THEN mahasiswa.namaProdi
+                    WHEN akun.role = 'dosen' THEN '-'
+                END AS prodi,
+                CASE 
+                    WHEN akun.role = 'mahasiswa' THEN mahasiswa.email
+                    WHEN akun.role = 'dosen' THEN dosen.email
+                END AS email
+            FROM akun
+            LEFT JOIN mahasiswa ON akun.username = mahasiswa.nim
+            LEFT JOIN dosen ON akun.username = dosen.nip
+            WHERE akun.status = 'pending';
+        ");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
 

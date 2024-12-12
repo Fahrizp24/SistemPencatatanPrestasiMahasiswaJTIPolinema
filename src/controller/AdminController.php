@@ -86,11 +86,11 @@ class AdminController extends Controller
     }
 
     public function kontrolAkun() {
-        $data = $_POST;
+        $antrian = $this->_model->getAkunPending();
 
-        if (isset($data['kontrolAkun'])) {
-            
-        }
+        $this->view->setData(['antrian' => $antrian]);
+        $this->view->setTemplate('template/admin/kontrolAkun_template.php');
+        $this->view->render();
     }
 }
 

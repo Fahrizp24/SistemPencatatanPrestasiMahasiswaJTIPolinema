@@ -25,6 +25,7 @@
         </i>
         Beranda 
     </a>
+    <?php if ($info['status'] === 'aktif'): ?>
     <a href="profilDosen" >
         <i class="fas fa-user">
         </i>
@@ -35,6 +36,8 @@
         </i>
         Permintaan
     </a>
+    <?php endif; ?>
+
     <div class="logout">
         <button id="logout">
             <i class="fas fa-sign-out-alt">

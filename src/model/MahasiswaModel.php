@@ -126,7 +126,15 @@ class MahasiswaModel extends Model
         $stmt = $this->_dbConnection->prepare("SELECT nama,nim,email,namaProdi,profilPath FROM mahasiswa m INNER JOIN akun a ON m.nim=a.username WHERE m.nim = :value1");
         $stmt->bindParam(':value1', $nim);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function getAkun($username)
+    {
+        $stmt = $this->_dbConnection->prepare("SELECT * FROM akun WHERE username = :value1");
+        $stmt->bindParam(':value1', $username);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     function getPrestasi($idPrestasi)

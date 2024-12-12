@@ -36,7 +36,7 @@
                     <p id="status" style="color:red"></p>
                 </div>
 
-                <p>Belum punya akun? <a href="register.php">daftar disini</a></p>
+                <p>Belum punya akun? <a href="register">daftar disini</a></p>
 
             </form>
         </div>

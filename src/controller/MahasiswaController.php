@@ -16,14 +16,21 @@ class MahasiswaController extends Controller
         $this->_model = new MahasiswaModel();
     }
 
+    private function addGlobalData()
+    {
+        return $this->_model->getAkun($_SESSION['session_username']);    
+    }
+
     public function beranda()
     {
         $status = $this->_model->getStatus($_SESSION['session_username']);
         $daftarPrestasi = $this->_model->getTableMahasiswa();
 
+        $info = $this->addGlobalData();
         $this->view->setData([
             'status' => $status[0],
-            'daftarPrestasi' => $daftarPrestasi
+            'daftarPrestasi' => $daftarPrestasi,
+            'info' => $info
         ]);
 
         $this->view->setTemplate('template/mahasiswa/berandaMahasiswa_template.php');
@@ -34,10 +41,12 @@ class MahasiswaController extends Controller
     {
         $kategori = $this->_model->getKategori();
         $tingkat = $this->_model->getTingkat();
+        $info = $this->addGlobalData();
 
         $this->view->setData([
             'kategori' => $kategori,
-            'tingkat' => $tingkat
+            'tingkat' => $tingkat,
+            'info' => $info
         ]);
 
         $this->view->setTemplate('template/mahasiswa/pengajuanMahasiswa_template.php');
@@ -81,11 +90,13 @@ class MahasiswaController extends Controller
 
     public function profil()
     {
+        $info = $this->addGlobalData();
         $profile = $this->_model->getMahasiswa($_SESSION['session_username']);
         $foto = $this->_model->getPhotoProfilePath($_SESSION['session_username']);
         $this->view->setData([
             'profile' => $profile,
-            'foto'=> $foto
+            'foto'=> $foto,
+            'info' => $info
         ]);
         $this->view->setTemplate('template/mahasiswa/profilMahasiswa_template.php');
         $this->view->render();
@@ -93,8 +104,12 @@ class MahasiswaController extends Controller
 
     public function detailPrestasi()
     {
+        $info = $this->addGlobalData();
         $prestasi = $this->_model->getPrestasi($_GET['idPrestasi']);
-        $this->view->setData(['prestasi' => $prestasi]);
+        $this->view->setData([
+            'prestasi' => $prestasi,
+            'info' => $info    
+        ]);
         $this->view->setTemplate('template/mahasiswa/detailPrestasi_template.php');
         $this->view->render();
     }

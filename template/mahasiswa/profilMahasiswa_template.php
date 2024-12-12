@@ -29,11 +29,11 @@
                 <div class="profile-card-bg">
                     <div class="profile-card">
                         <div class="info">
-                            <h2><?php echo $profile[0]['nama'] ?></h2>
-                            <p><?php echo $profile[0]['nim'] ?></p>
-                            <p><?php echo $profile[0]['email'] ?></p>
+                            <h2><?php echo $profile['nama'] ?></h2>
+                            <p><?php echo $profile['nim'] ?></p>
+                            <p><?php echo $profile['email'] ?></p>
                             <p>
-                                D-IV <span style="color: #ff7f00;"><?php echo $profile[0]['namaProdi'] ?></span>
+                                D-IV <span style="color: #ff7f00;"><?php echo $profile['namaProdi'] ?></span>
                             </p>
                             <p>Jurusan Teknologi Informasi</p>
                         </div>
@@ -66,19 +66,19 @@
             <label for="name">
                 Nama:
             </label><br>
-            <input type="text" id="nama" name="nama" value="<?php echo $profile[0]['nama'] ?>"><br><br>
+            <input type="text" id="nama" name="nama" value="<?php echo $profile['nama'] ?>"><br><br>
             <label for="nim">
                 NIM:
             </label><br>
-            <input disabled="" type="text" id="username" name="username" value="<?php echo $profile[0]['nim'] ?>"><br><br>
+            <input disabled="" type="text" id="username" name="username" value="<?php echo $profile['nim'] ?>"><br><br>
             <label for="email">
                 Email:
             </label><br>
-            <input type="email" id="email" name="email" value="<?php echo $profile[0]['email'] ?>"><br><br>
+            <input type="email" id="email" name="email" value="<?php echo $profile['email'] ?>"><br><br>
             <label for="prodi">
                 Program Studi:
             </label><br>
-            <input disabled="" type="text" id="prodi" name="prodi" value="<?php echo $profile[0]['namaProdi'] ?>"><br><br>
+            <input disabled="" type="text" id="prodi" name="prodi" value="<?php echo $profile['namaProdi'] ?>"><br><br>
             <input type="text" name="role" id="role" value="Mahasiswa" hidden>
             <button class="btn" type="submit">Simpan</button>
         </form>

@@ -7,6 +7,15 @@ use PDO;
 
 class DosenModel extends Model
 {
+    
+    function getAkun($username)
+    {
+        $stmt = $this->_dbConnection->prepare("SELECT * FROM akun WHERE username = :value1");
+        $stmt->bindParam(':value1', $username);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
     function getTablePrestasiNotInDiproses()
     {
         $sql = "SELECT p.idPrestasi,p.tanggalPengajuan,m.nama,p.namaLomba,p.bidang,p.jenis,p.tingkat,p.status FROM prestasi p INNER JOIN mahasiswa m ON m.nim=p.nimMahasiswa WHERE p.nipDosenPembimbing = :value1 AND p.status <> 'diproses' ORDER BY idPrestasi ASC";

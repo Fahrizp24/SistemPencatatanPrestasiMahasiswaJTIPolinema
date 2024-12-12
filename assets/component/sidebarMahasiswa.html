@@ -25,16 +25,16 @@
         </i>
         Beranda
     </a>
+    <?php if ($info['status'] === 'aktif'): ?>
     <a href="profilMahasiswa">
         <i class="fas fa-user">
         </i>
         Profil
     </a>
-    <a href="pengajuanMahasiswa">
-        <i class="fas fa-file-alt">
-        </i>
-        Pengajuan
-    </a>
+        <a href="pengajuanMahasiswa">
+            <i class="fas fa-file-alt"></i> Pengajuan
+        </a>
+    <?php endif; ?>
     <div class="logout">
         <button id="logout">
             <i class="fas fa-sign-out-alt">

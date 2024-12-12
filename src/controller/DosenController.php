@@ -18,11 +18,19 @@ class DosenController extends Controller
         $this->_model = new DosenModel();
     }
 
+    private function addGlobalData()
+    {
+        return $this->_model->getAkun($_SESSION['session_username']);  
+    }
 
     public function beranda()
     {
         $table = $this->_model->getTablePrestasiNotInDiproses();
-        $this->view->setData(['table' => $table]);
+        $info = $this->_model->getAkun($_SESSION['session_username']);
+        $this->view->setData([
+            'table' => $table,
+            'info' => $info
+        ]);
 
         $this->view->setTemplate('template/dosen/berandaDosen_template.php');
         $this->view->render();
@@ -32,9 +40,11 @@ class DosenController extends Controller
     {
         $profile = $this->_model->getDosen($_SESSION['session_username']);
         $foto = $this->_model->getPhotoProfilePath($_SESSION['session_username']);
+        $info = $this->_model->getAkun($_SESSION['session_username']);
         $this->view->setData([
             'profile' => $profile,
-            'foto' => $foto
+            'foto' => $foto,
+            'info' => $info
         ]);
         $this->view->setTemplate('template/dosen/profilDosen_template.php');
         $this->view->render();
@@ -43,7 +53,11 @@ class DosenController extends Controller
     public function permintaan()
     {
         $prestasi = $this->_model->getTablePrestasiDiproses($_SESSION['session_username']);
-        $this->view->setData(['prestasi' => $prestasi]);
+        $info = $this->_model->getAkun($_SESSION['session_username']);
+        $this->view->setData([
+            'prestasi' => $prestasi,
+            'info' => $info
+        ]);
         $this->view->setTemplate('template/dosen/permintaanDosen_template.php');
         $this->view->render();
     }
@@ -51,7 +65,11 @@ class DosenController extends Controller
     public function riwayatPrestasi()
     {
         $prestasi = $this->_model->getRiwayatPrestasi($_GET['idPrestasi']);
-        $this->view->setData(['prestasi' => $prestasi]);
+        $info = $this->_model->getAkun($_SESSION['session_username']);
+        $this->view->setData([
+            'prestasi' => $prestasi,
+            'info' => $info
+        ]);
         $this->view->setTemplate('template/dosen/riwayatPrestasiDosen_template.php');
         $this->view->render();
     }
