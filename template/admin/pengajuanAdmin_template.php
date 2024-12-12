@@ -6,6 +6,8 @@
 <html lang="id">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         SPPM POLINEMA
     </title>
@@ -20,8 +22,18 @@
 </head>
 
 <body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/img/jtiSppmPolinema.png" alt="SPPM POLINEMA Logo" />
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div id="sidebar-container"></div>
     <div class="container">
-        <?php require_once 'assets/component/header.html' ?>
         <?php require_once 'assets/component/sidebarAdmin.html' ?>
         <div class="content">
             <div class="main-content">
@@ -114,9 +126,9 @@
                 <img src="assets/img/LogoPolinema.png" alt="logo POLINEMA" width="20" height="20">
             </div>
         </div>
-         //TODO: uppdatePoin
+        //TODO: uppdatePoin
     </div>
-    <script> 
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Event untuk membuka modal
             document.querySelectorAll(".proses-btn").forEach((button) => {
@@ -188,7 +200,7 @@
                     if (poin === 0) {
                         // Tampilkan alert khusus untuk poin 0
                         const konfirmasi = alert('Poin prestasi masih 0. Tentukan poin terlebih dahulu untuk menerima prestasi');
-                            return; // Batalkan proses jika tidak dikonfirmasi
+                        return; // Batalkan proses jika tidak dikonfirmasi
                     }
 
                     // Konfirmasi penerimaan prestasi
@@ -201,7 +213,7 @@
                                 status: 'diterimaAdmin',
                                 poin: poin,
                                 action: 'updatePoin',
-                                keterangan:''
+                                keterangan: ''
                             },
                             success: function (response) {
                                 try {
@@ -278,6 +290,21 @@
                 });
             });
         });
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebarContainer = document.getElementById('sidebar-container');
+        fetch('assets/component/sidebarAdmin.html')
+            .then(response => response.text())
+            .then(html => {
+                sidebarContainer.innerHTML = html;
+                const sidebar = document.getElementById('sidebar');
+
+                // Menambahkan event listener setelah sidebar dimuat
+                menuToggle.addEventListener('click', () => {
+                    sidebar.classList.toggle('active');
+                });
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
+
     </script>
 </body>
 

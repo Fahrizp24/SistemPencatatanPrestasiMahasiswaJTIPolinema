@@ -4,6 +4,38 @@ body {
     padding: 0;
     background-color: #EEEEEE;
 }
+
+.logo-container {
+    width: 20%; /* Logo container width */
+    height: 100%;
+    background-color: #00234D; /* Full background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 80%; /* Adjust logo size within the container */
+    max-height: 80%; /* Keep within bounds */
+    object-fit: contain;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: #1a2b4c;
+    border-radius: 3px;
+}
+
 .kategori-lomba{
     display: none;
 }
