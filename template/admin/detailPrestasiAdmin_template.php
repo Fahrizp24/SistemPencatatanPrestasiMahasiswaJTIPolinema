@@ -41,42 +41,66 @@ require_once 'assets/component/check_login.php';
                     </div>
 
                     <div class="document-form">
-                        <div class="documentation">
-                            <h3>Dokumentasi</h3>
-                            <ul class="file-list">
-                                <div class="form-group">
-                                    <label>Dokumentasi</label>
+                        <h3>Dokumentasi</h3>
+                        <ul class="file-list">
+                            <li>
+                                <p>Sertifikat</p>
+                                <button id="sertifikatPath">Lihat</button>
+                                <div id="sertifikat-modal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Sertifikat</h2>
+                                        <hr class="separator">
+                                        <img class="modal-image" src="<?php echo $prestasi['sertifikatPath']; ?>"
+                                            alt="<?php echo $prestasi['sertifikatPath']; ?>">
+                                    </div>
                                 </div>
-                                <li>
-                                    <p>Sertifikat</p>
-                                    <button id="sertifikat-<?php echo $prestasi['sertifikatPath']; ?>">Lihat</button>
-                                </li>
-                                <li>
-                                    <p>Dokumentasi</p>
-                                    <button id="dokumentasi-<?php echo $prestasi['dokumentasiPath']; ?>">Lihat</button>
-                                </li>
-                                <li>
-                                    <p>Surat Tugas</p>
-                                    <button id="<?php echo $prestasi['suratTugasPath']; ?>">Lihat</button>
-                                </li>
-                            </ul>
-                            <?php
-                            if ($prestasi['status'] == 'diterimaDosen') {
-                                $prestasi['status'] = 'diproses';
-                            } else if($prestasi['status'] == 'diterimaAdmin') {
-                                $prestasi['status']='diterima';
-                            } 
-                            ?>
-                            <div class="statusPrestasi">
-                                <span>Status:</span>
-                                <span class="statusPrestasi status-<?php echo $prestasi['status'] ?>">
-                                    <?php echo ucwords($prestasi['status']); ?>
-                                </span>
-                            </div>
-                            <div class="keterangan">
-                                <label for="keterangan" style="font-weight: bold;">Keterangan :</label>
-                                <textarea id="keterangan" readonly></textarea>
-                            </div>
+                            </li>
+                            <li>
+                                <p>Dokumentasi</p>
+                                <button id="dokumentasiPath">Lihat</button>
+                                <div id="dokumentasi-modal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Dokumentasi</h2>
+                                        <hr class="separator">
+                                        <img class="modal-image" src="<?php echo $prestasi['dokumentasiPath']; ?>"
+                                            alt="<?php echo $prestasi['dokumentasiPath']; ?>">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Surat Tugas</p>
+                                <button id="suratTugasPath">Lihat</button>
+                                <div id="suratTugas-modal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Surat Tugas</h2>
+                                        <hr class="separator">
+                                        <img class="modal-image" src="<?php echo $prestasi['suratTugasPath']; ?>"
+                                            alt="<?php echo $prestasi['suratTugasPath']; ?>">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <?php
+                        if ($prestasi['status'] == 'ditolak') {
+                            $prestasi['status'] = 'ditolak';
+                        } else if ($prestasi['status'] == 'diterimaAdmin') {
+                            $prestasi['status'] = 'diterima';
+                        } else if ($prestasi['status'] == 'diproses' || $prestasi['status'] == 'diterimaDosen') {
+                            $prestasi['status'] = 'diproses';
+                        }
+                        ?>
+                        <div class="statusPrestasi">
+                            <span>Status:</span>
+                            <span class="statusPrestasi status-<?php echo $prestasi['status'] ?>">
+                                <?php echo ucwords($prestasi['status']); ?>
+                            </span>
+                        </div>
+                        <div class="keterangan">
+                            <label for="keterangan" style="font-weight: bold;">Keterangan :</label>
+                            <textarea id="keterangan" readonly><?= $prestasi['keterangan']?></textarea>
                         </div>
                     </div>
 
@@ -95,5 +119,41 @@ require_once 'assets/component/check_login.php';
     </div>
 
 </body>
+<script>
+    // Array untuk menyimpan modal dan tombol
+    var modals = [
+        { modal: document.getElementById("sertifikat-modal"), btn: document.getElementById("sertifikatPath") },
+        { modal: document.getElementById("dokumentasi-modal"), btn: document.getElementById("dokumentasiPath") },
+        { modal: document.getElementById("suratTugas-modal"), btn: document.getElementById("suratTugasPath") }
+    ];
 
+    // Fungsi untuk membuka modal
+    modals.forEach(function (item) {
+        item.btn.onclick = function () {
+            item.modal.style.display = "block";
+        };
+    });
+
+    // Fungsi untuk menutup modal
+    function closeModal(modal) {
+        modal.style.display = "none";
+    }
+
+    // Menambahkan event listener untuk tombol close
+    var closeButtons = document.getElementsByClassName("close");
+    Array.from(closeButtons).forEach(function (closeBtn, index) {
+        closeBtn.onclick = function () {
+            closeModal(modals[index].modal);
+        };
+    });
+
+    // Menutup modal jika pengguna mengklik di luar modal
+    window.onclick = function (event) {
+        modals.forEach(function (item) {
+            if (event.target == item.modal) {
+                closeModal(item.modal);
+            }
+        });
+    };
+</script>
 </html>

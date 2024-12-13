@@ -25,7 +25,7 @@
         <?php require_once 'assets/component/sidebarAdmin.html' ?>
         <div class="content">
             <div class="main-content">
-                <h2>Pengaturan</h2>
+                <h2>Kontrol Akun</h2>
                 <hr class="separator">
                 <table>
                     <tr>

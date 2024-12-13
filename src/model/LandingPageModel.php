@@ -22,7 +22,8 @@ class landingPageModel extends Model
                 GROUP BY 
                     nama, namaProdi
                 ORDER BY
-                    total_poin DESC";
+                    total_poin DESC
+                ";
         
         $stmt = $this->_dbConnection->prepare($sql);
         $stmt->execute();

@@ -10,7 +10,7 @@ class AdminModel extends Model
     function getTablePrestasiNotInDiprosesAdmin()
     {
         $sql = "SELECT p.idPrestasi, p.tanggalPengajuan,m.nama AS mahasiswa ,p.namaLomba,p.bidang,p.jenis,d.nama as dosen,p.tingkat,p.poin,p.status FROM prestasi p INNER JOIN mahasiswa m ON m.nim=p.nimMahasiswa INNER JOIN dosen d ON d.nip=p.nipDosenPembimbing
-                WHERE p.status = 'ditolak' OR p.status='diterimaAdmin' ORDER BY idPrestasi ASC";
+                WHERE p.status = 'ditolak' OR p.status='diterimaAdmin' ORDER BY idPrestasi DESC";
         $stmt = $this->_dbConnection->prepare($sql);
         $success = $stmt->execute();
         if ($success) {
@@ -138,25 +138,25 @@ class AdminModel extends Model
 
     function getAkunPending() {
         $stmt = $this->_dbConnection->prepare("
-                    SELECT
-                akun.username, 
-                akun.role, 
-                CASE 
-                    WHEN akun.role = 'mahasiswa' THEN mahasiswa.nama 
-                    WHEN akun.role = 'dosen' THEN dosen.nama 
-                END AS nama,
-                CASE 
-                    WHEN akun.role = 'mahasiswa' THEN mahasiswa.namaProdi
-                    WHEN akun.role = 'dosen' THEN '-'
-                END AS prodi,
-                CASE 
-                    WHEN akun.role = 'mahasiswa' THEN mahasiswa.email
-                    WHEN akun.role = 'dosen' THEN dosen.email
-                END AS email
-            FROM akun
-            LEFT JOIN mahasiswa ON akun.username = mahasiswa.nim
-            LEFT JOIN dosen ON akun.username = dosen.nip
-            WHERE akun.status = 'pending';
+                        SELECT
+                    akun.username, 
+                    akun.role, 
+                    CASE 
+                        WHEN akun.role = 'mahasiswa' THEN mahasiswa.nama 
+                        WHEN akun.role = 'dosen' THEN dosen.nama 
+                    END AS nama,
+                    CASE 
+                        WHEN akun.role = 'mahasiswa' THEN mahasiswa.namaProdi
+                        WHEN akun.role = 'dosen' THEN '-'
+                    END AS prodi,
+                    CASE 
+                        WHEN akun.role = 'mahasiswa' THEN mahasiswa.email
+                        WHEN akun.role = 'dosen' THEN dosen.email
+                    END AS email
+                FROM akun
+                LEFT JOIN mahasiswa ON akun.username = mahasiswa.nim
+                LEFT JOIN dosen ON akun.username = dosen.nip
+                WHERE akun.status = 'pending';
         ");
         $stmt->execute();
 
