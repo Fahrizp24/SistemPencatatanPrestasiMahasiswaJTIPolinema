@@ -23,6 +23,7 @@
         </div>
     </header>
     <main>
+        <?php $count = 1?>
         <div class="news-container">
             <img class="news-image" src="<?=$newsData['dokumentasiPath']?>" alt="">
             <div class="news-label">
@@ -53,83 +54,22 @@
             <div class="title"> PAPAN PERINGKAT</div>
             <div class="list">
                 <div class="item">
-                    <div class="rank-nama">
+                <?php 
+                foreach ($leaderboard as $row) {?>
+                    <div class="rank-nama">            
                         <div class="rank">
-                            1
+                            <?php echo $count?>
                         </div>
                         <div class="nama">
-                            Hanifah Kurniasari
+                            <?php echo $row['nama']?>
                         </div>
                     </div>
                     <div class="points">
-                        50 points | Teknik Informatika
+                        <?php echo $row['total_poin']?> points | <?php echo $row['namaProdi']?>
                     </div>
-                    <div class="rank-nama">
-                        <div class="rank">
-                            2
-                        </div>
-                        <div class="nama">
-                            Hanifah Kurniasari
-                        </div>
-                    </div>
-                    <div class="points">
-                        50 points | Teknik Informatika
-                    </div>
-                    <div class="rank-nama">
-                        <div class="rank">
-                            3
-                        </div>
-                        <div class="nama">
-                            Hanifah Kurniasari
-                        </div>
-                    </div>
-                    <div class="points">
-                        50 points | Teknik Informatika
-                    </div>
-                    <div class="rank-nama">
-                        <div class="rank">
-                            4
-                        </div>
-                        <div class="nama">
-                            Hanifah Kurniasari
-                        </div>
-                    </div>
-                    <div class="points">
-                        50 points | Teknik Informatika
-                    </div>
-                    <div class="rank-nama">
-                        <div class="rank">
-                            5
-                        </div>
-                        <div class="nama">
-                            Hanifah Kurniasari
-                        </div>
-                    </div>
-                    <div class="points">
-                        50 points | Teknik Informatika
-                    </div>
-                    <div class="rank-nama">
-                        <div class="rank">
-                            6
-                        </div>
-                        <div class="nama">
-                            Hanifah Kurniasari
-                        </div>
-                    </div>
-                    <div class="points">
-                        50 points | Teknik Informatika
-                    </div>
-                    <div class="rank-nama">
-                        <div class="rank">
-                            7
-                        </div>
-                        <div class="nama">
-                            Hanifah Kurniasari
-                        </div>
-                    </div>
-                    <div class="points">
-                        50 points | Teknik Informatika
-                    </div>
+                    <?php $count+=1?>
+                    <?php }?>
+                        
                 </div>
             </div>
         </div>
