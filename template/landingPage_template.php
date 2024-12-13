@@ -64,6 +64,72 @@
                     <div class="points">
                         50 points | Teknik Informatika
                     </div>
+                    <div class="rank-nama">
+                        <div class="rank">
+                            2
+                        </div>
+                        <div class="nama">
+                            Hanifah Kurniasari
+                        </div>
+                    </div>
+                    <div class="points">
+                        50 points | Teknik Informatika
+                    </div>
+                    <div class="rank-nama">
+                        <div class="rank">
+                            3
+                        </div>
+                        <div class="nama">
+                            Hanifah Kurniasari
+                        </div>
+                    </div>
+                    <div class="points">
+                        50 points | Teknik Informatika
+                    </div>
+                    <div class="rank-nama">
+                        <div class="rank">
+                            4
+                        </div>
+                        <div class="nama">
+                            Hanifah Kurniasari
+                        </div>
+                    </div>
+                    <div class="points">
+                        50 points | Teknik Informatika
+                    </div>
+                    <div class="rank-nama">
+                        <div class="rank">
+                            5
+                        </div>
+                        <div class="nama">
+                            Hanifah Kurniasari
+                        </div>
+                    </div>
+                    <div class="points">
+                        50 points | Teknik Informatika
+                    </div>
+                    <div class="rank-nama">
+                        <div class="rank">
+                            6
+                        </div>
+                        <div class="nama">
+                            Hanifah Kurniasari
+                        </div>
+                    </div>
+                    <div class="points">
+                        50 points | Teknik Informatika
+                    </div>
+                    <div class="rank-nama">
+                        <div class="rank">
+                            7
+                        </div>
+                        <div class="nama">
+                            Hanifah Kurniasari
+                        </div>
+                    </div>
+                    <div class="points">
+                        50 points | Teknik Informatika
+                    </div>
                 </div>
             </div>
         </div>

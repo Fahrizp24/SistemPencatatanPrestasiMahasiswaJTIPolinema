@@ -161,12 +161,17 @@ main{
 }
 
 .leaderboard .list .item .rank-nama {
+    margin-top: 10px;
     display: flex; 
     align-items: center;
 }
 
 .leaderboard .list .item .rank {
     font-weight: bold;
+}
+
+.points{
+    margin-left: 40px;
 }
 .leaderboard .list .item .nama {
     flex-grow: 1;
