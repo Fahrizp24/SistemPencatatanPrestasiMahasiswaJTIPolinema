@@ -16,7 +16,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/profileStyle.css">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/profil.js"></script>
     <link rel="icon" href="assets/img/SPPMicon.png">
 </head>
 
@@ -88,7 +88,4 @@
         </form>
     </div>
 </div>
-
-<script src="assets/js/profil.js"></script>
-
 </html>

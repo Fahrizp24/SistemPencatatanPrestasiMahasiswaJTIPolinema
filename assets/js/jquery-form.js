@@ -76,30 +76,6 @@ $(document).ready(function () {
         });
     });
 
-    $('#updateProfilForm').submit(function (event) {
-        event.preventDefault();
-        var formData = new FormData(this);
-        var url = (formData.get('role') == 'Dosen') ? 'updateProfilDsn' :'updateProfilMhs';
-
-        formData.append('updateProfil', 'updateProfil');
-
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function (response) {
-                var data = JSON.parse(response);
-                if (data.status === 'success') {
-                    window.location.reload(true);
-                } else {
-                    $('#status').html(data.message);
-                }
-            }
-        });
-    })
-
     $('#pengajuanForm').submit(function (event) {
         event.preventDefault();
         var formData = new FormData(this); // Ambil data dari form termasuk file

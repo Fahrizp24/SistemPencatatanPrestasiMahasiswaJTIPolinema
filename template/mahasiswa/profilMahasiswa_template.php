@@ -7,7 +7,7 @@
         SPPM POLINEMA
     </title>
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/profil.js"></script>
     <link rel="stylesheet" href="assets/css/profileStyle.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
@@ -84,6 +84,4 @@
         </form>
     </div>
 </div>
-<script src="assets/js/profil.js"></script>
-
 </html>
