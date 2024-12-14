@@ -92,7 +92,7 @@ $(document).ready(function () {
             success: function (response) {
                 var data = JSON.parse(response);
                 if (data.status === 'success') {
-                    window.location.reload();
+                    window.location.reload(true);
                 } else {
                     $('#status').html(data.message);
                 }
