@@ -1,9 +1,4 @@
-<?php
-// require_once 'assets/component/check_login.php';
-?>
-
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +7,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
     <link rel="stylesheet" href="assets/css/homeStyles.css">
     <link rel="icon" href="assets/img/SPPMicon.png">
 </head>
@@ -123,8 +117,4 @@
         </div>
     </div>
 </body>
-
 </html>
-<script>
-
-</script>

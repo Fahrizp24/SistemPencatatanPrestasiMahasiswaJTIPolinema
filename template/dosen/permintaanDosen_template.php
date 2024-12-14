@@ -16,8 +16,7 @@ require_once 'assets/component/check_login.php';
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/PermintaanStyle.css">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
-    <script src="assets/js/permintaanDosen.js"></script>
+    <script src="assets/js/permintaan-dosen.js"></script>
     <link rel="icon" href="assets/img/SPPMicon.png">
 </head>
 
@@ -99,5 +98,4 @@ require_once 'assets/component/check_login.php';
     </div>
     </div>
 </body>
-
 </html>

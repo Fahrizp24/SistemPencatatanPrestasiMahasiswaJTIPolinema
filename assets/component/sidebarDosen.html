@@ -1,29 +1,8 @@
-<script>
-    $(document).ready(function () {
-        const menuToggle = document.getElementById('menu-toggle');
-        const sidebar = document.getElementById('sidebar');
-
-        // Menambahkan event listener
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-
-        // Mendapatkan URL path halaman saat ini
-        var currentPath = window.location.pathname;
-        $('.sidebar a').each(function () {
-            var linkPath = $(this).attr('href');
-            // Jika URL path cocok dengan href, tambahkan class 'active'
-            if (currentPath.includes(linkPath)) {
-                $('.sidebar a').removeClass('on'); // Hilangkan class 'active' dari link lainnya
-                $(this).addClass('on'); // Tambahkan class 'active' pada link yang sesuai
-            }
-        });
-    });
-</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<link href="assets/js/jquery-3.7.1.js" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/homeStyles.css">
+<script src="assets/js/sidebar.js"></script>
 <div class="sidebar" id="sidebar">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="assets/js/jquery-3.7.1.js" rel="stylesheet"/>
-    <link rel="stylesheet" href="assets/css/homeStyles.css">
     <a href="berandaDosen"class="active">
         <i class="fas fa-home">
         </i>

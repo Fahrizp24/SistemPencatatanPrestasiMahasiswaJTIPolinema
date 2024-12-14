@@ -111,18 +111,6 @@ $(document).ready(function () {
         });
     });
 
-
-    $('#logout').click(function () {
-        var formData = new FormData();
-        formData.append('action', 'logout');
-        $.ajax({
-            url: 'logout',
-            type: 'GET'
-        });
-        window.location.href = 'index'; e
-    });
-
-
     $('#nipDosenPembimbing').on('keyup', function () {
         let nip = $(this).val();
         if (nip !== "") {

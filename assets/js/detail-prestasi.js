@@ -1,3 +1,4 @@
+$(document).ready(function () {
     // Array untuk menyimpan modal dan tombol
     var modals = [
         { modal: document.getElementById("sertifikat-modal"), btn: document.getElementById("sertifikatPath") },
@@ -33,3 +34,4 @@
             }
         });
     };
+})
