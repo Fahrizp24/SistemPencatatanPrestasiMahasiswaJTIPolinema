@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/css/registerStyle.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/img/SPPMicon.png">
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/register.js"></script>
 </head>
 
 <body>
@@ -68,10 +70,5 @@
         </div>
     </main>
     <?php require_once 'assets/component/footer.html' ?>
-
-    <script src="assets/js/display-function.js"></script>
-    <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
 </body>
-
 </html>

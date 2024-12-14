@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Pencatatan Prestasi Mahasiswa JTI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/loginStyle.css">
     <link rel="icon" href="assets/img/SPPMicon.png">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/login.js"></script>
 </head>
 
 <body>
@@ -35,9 +34,7 @@
                 <div>
                     <p id="status" style="color:red"></p>
                 </div>
-
                 <p>Belum punya akun? <a href="register">daftar disini</a></p>
-
             </form>
         </div>
     </main>

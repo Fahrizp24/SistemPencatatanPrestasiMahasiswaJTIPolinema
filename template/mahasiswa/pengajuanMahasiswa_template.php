@@ -1,9 +1,3 @@
-<?php
-// require_once 'assets/component/check_login.php';
-
-?>
-<html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/pengajuanStyle.css">
     <link rel="icon" href="assets/img/SPPMicon.png">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/pengajuan.js"></script>
 </head>
 
 <body>
@@ -145,67 +139,5 @@
                 <img src="assets/img/LogoPolinema.png" alt="logo POLINEMA" width="20" height="20">
             </div>
         </div>
-
-        <script>
-            const fileSertifikat = document.getElementById('sertifikatLomba');
-            const descriptionSertifikat = document.getElementById('description-sertifikatLomba');
-
-            fileSertifikat.addEventListener('change', function () {
-                if (fileSertifikat.files.length > 0) {
-                    const file = this.files[0];
-                    if (file.size > 2 * 1024 * 1024) {
-                        this.value = ""; // Reset input file
-                        descriptionSertifikat.innerHTML = 'Ukuran file lebih dari 2MB';
-                    } else {
-                        descriptionSertifikat.innerHTML = file.name; // menampilkan nama file
-                    }
-                } else {
-                    // Jika tidak ada file, kembalikan teks default
-                    descriptionSertifikat.innerHTML = 'JPG, JPEG atau PNG, ukuran file tidak lebih dari 2MB';
-                }
-            });
-
-            const fileDokumentasi = document.getElementById('dokumentasiLomba');
-            const descriptionDokumentasi = document.getElementById('description-dokumentasiLomba');
-
-            // Tambahkan event listener untuk memantau perubahan pada input file
-            fileDokumentasi.addEventListener('change', function () {
-                const file = this.files[0];
-
-                if (fileDokumentasi.files.length > 0) {
-                    if (file.size > 2 * 1024 * 1024) {
-                        this.value = ""; // Reset input file
-                        descriptionDokumentasi.innerHTML = 'Ukuran file lebih dari 2MB';
-                    } else {
-                        descriptionDokumentasi.innerHTML = file.name; // menampilkan nama file
-                    }
-                } else {
-                    // Jika tidak ada file, kembalikan teks default
-                    descriptionDokumentasi.innerHTML = 'JPG, JPEG atau PNG, ukuran file tidak lebih dari 2MB';
-                }
-            });
-            const fileSuratTugas = document.getElementById('suratTugas');
-            const descriptionSuratTugas = document.getElementById('description-suratTugas');
-
-            // Tambahkan event listener untuk memantau perubahan pada input file
-            fileSuratTugas.addEventListener('change', function () {
-                const file = this.files[0];
-
-                if (fileSuratTugas.files.length > 0) {
-                    const file = this.files[0];
-                    if (file.size > 2 * 1024 * 1024) {
-                        this.value = ""; // Reset input file
-                        descriptionSuratTugas.innerHTML = 'Ukuran file lebih dari 2MB';
-                    } else {
-                        descriptionSuratTugas.innerHTML = file.name; // menampilkan nama file
-                    }
-                } else {
-                    // Jika tidak ada file, kembalikan teks default
-                    descriptionSuratTugas.innerHTML = 'JPG, JPEG atau PNG, ukuran file tidak lebih dari 2MB';
-                }
-            });
-           
-        </script>
 </body>
-
 </html>
