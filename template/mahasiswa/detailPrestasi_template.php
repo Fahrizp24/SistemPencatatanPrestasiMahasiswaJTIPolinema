@@ -26,8 +26,8 @@
                             <p><?php echo $prestasi[0]['penyelenggara']; ?></p>
                             <label>Bidang</label>
                             <p><?php echo $prestasi[0]['bidang']; ?></p>
-                            <label>Tanggal Final (YY//MM/DD)</label>
-                            <p><?php echo $prestasi[0]['waktu']; ?></p>
+                            <label>Tanggal Final</label>
+                            <p><?php echo date('d-m-Y', strtotime($prestasi[0]['waktu'])); ?></p>
                             <label>Dosen Pembimbing</label>
                             <p><?php echo $prestasi[0]['nipDosenPembimbing']; ?></p>
                             <label>Jenis</label>

@@ -62,7 +62,7 @@
                             $row['status'] = 'diproses';
                         }
                         echo "<tr>";
-                        echo "<td>" . $row['tanggalPengajuan'] . "</td>";
+                        echo "<td>" . date('d-m-Y', strtotime($row['tanggalPengajuan'])) . "</td>";
                         echo "<td>" . $row['mahasiswa'] . "</td>";
                         echo "<td>" . $row['namaLomba'] . "</td>";
                         echo "<td>" . $row['bidang'] . "</td>";

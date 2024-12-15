@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>${data[2]}</p>
                 <h3>Nama Mahasiswa</h3>
                 <p>${data[1]}</p>
-                <h3>Tanggal Final (dd/MM/YY)</h3>
+                <h3>Tanggal Final</h3>
                 <p>${data[0]}</p>
                 <h3>Dosen Pembimbing</h3>
                 <p>${data[5]}</p>

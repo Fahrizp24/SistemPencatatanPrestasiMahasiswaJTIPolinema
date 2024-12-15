@@ -56,8 +56,8 @@
                                         <p>" . $row['namaLomba'] . "</p>
                                         <h3>Nama Mahasiswa</h3>
                                         <p>" . $row['mahasiswa'] . "</p>
-                                        <h3>Tanggal Final (dd/MM/YY)</h3>
-                                        <p>" . $row['waktu'] . "</p>
+                                        <h3>Tanggal Final</h3>
+                                        <p>" . date('d-m-Y', strtotime($row['waktu'])) . "</p>
                                         <h3>Dosen Pembimbing</h3>
                                         <p>" . $row['dosen'] . "</p>
                                         <h3>Kategori</h3>
@@ -96,7 +96,7 @@
                             </div>
                         </div>";
                         echo "<tr>";
-                        echo "<td>" . $row['waktu'] . "</td>";
+                        echo "<td>" . date('d-m-Y', strtotime($row['waktu'])) . "</td>";
                         echo "<td>" . $row['mahasiswa'] . "</td>";
                         echo "<td>" . $row['namaLomba'] . "</td>";
                         echo "<td>" . $row['bidang'] . "</td>";

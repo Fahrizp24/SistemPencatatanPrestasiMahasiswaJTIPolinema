@@ -32,7 +32,7 @@ require_once 'assets/component/check_login.php';
                             <label>Bidang</label>
                             <p><?php echo $prestasi['bidang']; ?></p>
                             <label>Tanggal Final (YY//MM/DD)</label>
-                            <p><?php echo $prestasi['waktu']; ?></p>
+                            <p><?php echo date('d-m-Y', strtotime($prestasi['waktu'])); ?></p>
                             <label>Dosen Pembimbing</label>
                             <p><?php echo $prestasi['nipDosenPembimbing']; ?></p>
                             <label>Jenis</label>

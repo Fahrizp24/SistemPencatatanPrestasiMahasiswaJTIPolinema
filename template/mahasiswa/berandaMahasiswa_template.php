@@ -91,7 +91,7 @@
                             }
                             ?>
                             <tr>
-                                <td><?php echo $row['tanggalPengajuan']; ?></td>
+                                <td><?php echo date('d-m-Y', strtotime($row['tanggalPengajuan'])); ?></td>
                                 <td><?php echo $row['namaLomba']; ?></td>
                                 <td><?php echo $row['bidang']; ?></td>
                                 <td><?php echo $row['nama']; ?></td>
