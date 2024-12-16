@@ -96,33 +96,33 @@ $(document).ready(function () {
 
     //TODO : nih dibawah buat apa yak
 
-    $('#submit-point').submit(function (event) {
-        event.preventDefault();
-        var idPrestasi = $('#idPrestasi').val();
-        var poin = $('#poin').val();
-        $('#')
-        $.ajax({
-            url: '../controller/process-form',
-            type: 'POST',
-            data: {
-                action: 'updatePoinAdmin', // Parameter untuk menentukan fungsi yang dipanggil
-                idPrestasi: idPrestasi,
-                poin: poin,
-            },
-            success: function (response) {
-                var data = JSON.parse(response);
-                if (data.status === 'success') {
-                    window.location.href = '../view/index'; // window refresh
-                } else {
-                    $('#status').html(data.message);
-                }
-            },
-            error: function () {
-                console.error(error);
-                alert('Proses Error.');
-            }
-        });
-    });
+    // $('#submit-point').submit(function (event) {
+    //     event.preventDefault();
+    //     var idPrestasi = $('#idPrestasi').val();
+    //     var poin = $('#poin').val();
+    //     $('#')
+    //     $.ajax({
+    //         url: '../controller/process-form',
+    //         type: 'POST',
+    //         data: {
+    //             action: 'updatePoinAdmin', // Parameter untuk menentukan fungsi yang dipanggil
+    //             idPrestasi: idPrestasi,
+    //             poin: poin,
+    //         },
+    //         success: function (response) {
+    //             var data = JSON.parse(response);
+    //             if (data.status === 'success') {
+    //                 window.location.href = '../view/index'; // window refresh
+    //             } else {
+    //                 $('#status').html(data.message);
+    //             }
+    //         },
+    //         error: function () {
+    //             console.error(error);
+    //             alert('Proses Error.');
+    //         }
+    //     });
+    // });
 
 });
 

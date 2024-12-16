@@ -86,7 +86,11 @@
                                             <p>Baca ketentuan Pemberian Poin pada menu informasi. Pastikan poin yang diinputkan
                                                 <span style='color:red'>sesuai dengan ketentuan yang berlaku!</span></p>
                                             <label for='poin'>Beri Poin:</label>
-                                            <input type='number' id='poin' name='poin' min='0'>
+                                            <select name='poin' id='poin'>
+                                                <option value='A'> Kluster A </option>
+                                                <option value='B'> Kluster B </option>
+                                                <option value='C'> Kluster C </option>
+                                            </select>
                                             <button type='button' id='submit-point'>Simpan</button>
                                         </form>
                                     </div>
@@ -150,8 +154,23 @@
             document.querySelectorAll("#submit-point").forEach((submitBtn) => {
                 submitBtn.addEventListener("click", () => {
                     const modal = submitBtn.closest(".modal");
-                    const pointInput = modal.querySelector("#poin");
-                    const point = parseInt(pointInput.value, 10);
+                    const pointInput = modal.querySelector("#poin").value;
+                    var point = 0;
+
+                    switch (pointInput) {
+                        case 'A':
+                            point = 15;
+                            break;
+                        case 'B':
+                            point = 10;
+                            break;
+                        case 'C':
+                            point = 5;
+                            break;
+                        default:
+                            point = 0;
+                            break;
+                    }
 
                     // Dapatkan ID prestasi dari ID modal secara langsung
                     const idPrestasi = modal.getAttribute('id').split('-')[1];
