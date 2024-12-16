@@ -58,7 +58,7 @@ $app->setRoutes([
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/kontrolAkunAdmin' => 'AdminController@kontrolAkun',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/kontrolAkunAdmin/kelolaAkun' => 'AdminController@kelolaAkun',
     '/SistemPencatatanPrestasiMahasiswaJTIPolinema/pengaturanAdmin' => 'AdminController@pengaturan',
-    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/editTingkatAndKategori' => 'AdminController@editTable'
+    '/SistemPencatatanPrestasiMahasiswaJTIPolinema/editKategoriAndTingkat' => 'AdminController@editKategoriAndTingkat'
 
     
 ]);

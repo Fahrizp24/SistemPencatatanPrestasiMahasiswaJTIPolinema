@@ -133,11 +133,9 @@ VALUES
 ('2024-09-08','4C National Competition', '2024-05-20', 'FILKOM UB','Nasional', 'Penulisan Ilmiah','Harapan 3', '198107052005011002', '2341720177',
 'assets/filemedia/sertifikat/23_2341720177.jpg', 'assets/filemedia/dokumentasi/23_2341720177.jpg', 'assets/filemedia/suratTugas/23_2341720177.jpg', NULL, 'diterimaDosen', NULL, NULL);
 
-
-
-INSERT INTO kategori (namaKategori) 
+INSERT INTO kategori (namaKategori, poin) 
 VALUES
-('Juara 1'), ('Juara 2'), ('Juara 3'), ('Harapan 1'), ('Harapan 2'), ('Harapan 3'), ('Finalis');
+('Juara 1', 6), ('Juara 2', 5), ('Juara 3', 4), ('Harapan 1', 3), ('Harapan 2', 2), ('Harapan 3', 1), ('Finalis', 0);
 
 INSERT INTO tingkat (namaTingkat) 
 VALUES

@@ -47,21 +47,6 @@ class MahasiswaModel extends Model
         return $stmt->fetchAll();
     }
 
-    function getTingkat()
-    {
-        $stmt = $this->_dbConnection->prepare("SELECT * FROM tingkat");
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-    function getKategori()
-    {
-        $stmt = $this->_dbConnection->prepare("SELECT * FROM kategori");
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     function pengajuan($namaLomba, $tingkat, $jenis, $waktu, $penyelenggara, $bidang, $nipDosenPembimbing, $nimMahasiswa)
     {
         $baseDir = "assets/filemedia/";
@@ -135,14 +120,6 @@ class MahasiswaModel extends Model
         $stmt->bindParam(':value1', $username);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-
-    function getPrestasi($idPrestasi)
-    {
-        $stmt = $this->_dbConnection->prepare("SELECT * FROM prestasi WHERE idPrestasi = :value1");
-        $stmt->bindParam(':value1', $idPrestasi);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     function updateProfil($nim, $nama, $email)

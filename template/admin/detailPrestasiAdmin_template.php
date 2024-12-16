@@ -25,18 +25,18 @@ require_once 'assets/component/check_login.php';
                 <div class="isi-form">
                     <div class="form-group">
                         <div>
-                            <label>Nama Lomba</label>
-                            <p><?php echo $prestasi['namaLomba']; ?></p>
+                        <label>Nama Lomba</label>
+                            <p><?php echo $prestasi[0]['namaLomba']; ?></p>
                             <label>Penyelenggara</label>
-                            <p><?php echo $prestasi['penyelenggara']; ?></p>
+                            <p><?php echo $prestasi[0]['penyelenggara']; ?></p>
                             <label>Bidang</label>
-                            <p><?php echo $prestasi['bidang']; ?></p>
-                            <label>Tanggal Final (YY//MM/DD)</label>
-                            <p><?php echo date('d-m-Y', strtotime($prestasi['waktu'])); ?></p>
+                            <p><?php echo $prestasi[0]['bidang']; ?></p>
+                            <label>Tanggal Final</label>
+                            <p><?php echo date('d-m-Y', strtotime($prestasi[0]['waktu'])); ?></p>
                             <label>Dosen Pembimbing</label>
-                            <p><?php echo $prestasi['nipDosenPembimbing']; ?></p>
+                            <p><?php echo $prestasi[0]['nipDosenPembimbing']; ?></p>
                             <label>Jenis</label>
-                            <p><?php echo $prestasi['jenis']; ?></p>
+                            <p><?php echo $prestasi[0]['jenis']; ?></p>
                         </div>
                     </div>
 
@@ -51,8 +51,8 @@ require_once 'assets/component/check_login.php';
                                         <span class="close">&times;</span>
                                         <h2>Sertifikat</h2>
                                         <hr class="separator">
-                                        <img class="modal-image" src="<?php echo $prestasi['sertifikatPath']; ?>"
-                                            alt="<?php echo $prestasi['sertifikatPath']; ?>">
+                                        <img class="modal-image" src="<?php echo $prestasi[0]['sertifikatPath']; ?>"
+                                            alt="<?php echo $prestasi[0]['sertifikatPath']; ?>">
                                     </div>
                                 </div>
                             </li>
@@ -64,8 +64,8 @@ require_once 'assets/component/check_login.php';
                                         <span class="close">&times;</span>
                                         <h2>Dokumentasi</h2>
                                         <hr class="separator">
-                                        <img class="modal-image" src="<?php echo $prestasi['dokumentasiPath']; ?>"
-                                            alt="<?php echo $prestasi['dokumentasiPath']; ?>">
+                                        <img class="modal-image" src="<?php echo $prestasi[0]['dokumentasiPath']; ?>"
+                                            alt="<?php echo $prestasi[0]['dokumentasiPath']; ?>">
                                     </div>
                                 </div>
                             </li>
@@ -77,33 +77,32 @@ require_once 'assets/component/check_login.php';
                                         <span class="close">&times;</span>
                                         <h2>Surat Tugas</h2>
                                         <hr class="separator">
-                                        <img class="modal-image" src="<?php echo $prestasi['suratTugasPath']; ?>"
-                                            alt="<?php echo $prestasi['suratTugasPath']; ?>">
+                                        <img class="modal-image" src="<?php echo $prestasi[0]['suratTugasPath']; ?>"
+                                            alt="<?php echo $prestasi[0]['suratTugasPath']; ?>">
                                     </div>
                                 </div>
                             </li>
                         </ul>
                         <?php
-                        if ($prestasi['status'] == 'ditolak') {
-                            $prestasi['status'] = 'ditolak';
-                        } else if ($prestasi['status'] == 'diterimaAdmin') {
-                            $prestasi['status'] = 'diterima';
-                        } else if ($prestasi['status'] == 'diproses' || $prestasi['status'] == 'diterimaDosen') {
-                            $prestasi['status'] = 'diproses';
+                        if ($prestasi[0]['status'] == 'ditolak') {
+                            $prestasi[0]['status'] = 'ditolak';
+                        } else if ($prestasi[0]['status'] == 'diterimaAdmin') {
+                            $prestasi[0]['status'] = 'diterima';
+                        } else if ($prestasi[0]['status'] == 'diproses' || $prestasi[0]['status'] == 'diterimaDosen') {
+                            $prestasi[0]['status'] = 'diproses';
                         }
                         ?>
                         <div class="statusPrestasi">
                             <span>Status:</span>
-                            <span class="statusPrestasi status-<?php echo $prestasi['status'] ?>">
-                                <?php echo ucwords($prestasi['status']); ?>
+                            <span class="statusPrestasi status-<?php echo $prestasi[0]['status'] ?>">
+                                <?php echo ucwords($prestasi[0]['status']); ?>
                             </span>
                         </div>
                         <div class="keterangan">
                             <label for="keterangan" style="font-weight: bold;">Keterangan :</label>
-                            <textarea id="keterangan" readonly><?= $prestasi['keterangan']?></textarea>
+                            <textarea id="keterangan" readonly><?= $prestasi[0]['keterangan']?></textarea>
                         </div>
                     </div>
-
                 </div>
                 <div class="back-button">
                     <a href="berandaAdmin"> <button><i class="fas fa-arrow-left"></i>Kembali</button></a>

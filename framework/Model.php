@@ -30,5 +30,29 @@ class Model
             die("Error: " . $e->getMessage());
         }
     }
+
+    public function getTingkat()
+    {
+        $stmt = $this->_dbConnection->prepare("SELECT * FROM tingkat");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getKategori()
+    {
+        $stmt = $this->_dbConnection->prepare("SELECT * FROM kategori");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getPrestasi($idPrestasi)
+    {
+        $stmt = $this->_dbConnection->prepare("SELECT * FROM prestasi WHERE idPrestasi = :value1");
+        $stmt->bindParam(':value1', $idPrestasi);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 

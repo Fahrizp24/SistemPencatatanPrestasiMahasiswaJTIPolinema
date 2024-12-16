@@ -3,7 +3,7 @@ $(document).ready(function () {
         event.preventDefault();
         var id = $(this).find('#idTingkat').val();
         $.ajax({
-            url: 'editTingkatAndKategori',
+            url: 'editKategoriAndTingkat',
             type: 'POST',
             data: {
                 process: 'hapus',
@@ -27,7 +27,7 @@ $(document).ready(function () {
         event.preventDefault();
         var id = $(this).find('#idKategori').val();
         $.ajax({
-            url: 'editTingkatAndKategori',
+            url: 'editKategoriAndTingkat',
             type: 'POST',
             data: {
                 process: 'hapus',
@@ -51,7 +51,7 @@ $(document).ready(function () {
         var nama = $(this).find('#nama').val();
 
         $.ajax({
-            url: 'editTingkatAndKategori',
+            url: 'editKategoriAndTingkat',
             type: 'POST',
             data: {
                 process: 'tambah',
@@ -73,13 +73,15 @@ $(document).ready(function () {
     $('#tambahKategori').submit(function (event) {
         event.preventDefault();
         var nama = $(this).find('#nama').val();
+        var poin = $(this).find('#poin').val();
 
         $.ajax({
-            url: 'editTingkatAndKategori',
+            url: 'editKategoriAndTingkat',
             type: 'POST',
             data: {
                 process: 'tambah',
                 name: nama,
+                poin: poin,
                 table: 'kategori',
                 id: 0
             },

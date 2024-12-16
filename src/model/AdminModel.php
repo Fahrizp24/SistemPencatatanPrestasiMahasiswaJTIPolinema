@@ -21,9 +21,39 @@ class AdminModel extends Model
 
     function getTableDiterimaDosen()
     {
-        $stmt = $this->_dbConnection->prepare("SELECT p.idPrestasi, p.tanggalPengajuan, p.waktu,m.nama AS mahasiswa ,p.namaLomba,p.bidang,p.jenis,d.nama as dosen,p.tingkat,p.poin,p.status,p.sertifikatPath,p.suratTugasPath,p.dokumentasiPath FROM prestasi p 
-                INNER JOIN mahasiswa m ON m.nim=p.nimMahasiswa INNER JOIN dosen d ON d.nip=p.nipDosenPembimbing
-                WHERE p.status='diterimaDosen' ORDER BY idPrestasi ASC");
+        $stmt = $this->_dbConnection->prepare("SELECT 
+                                                        p.idPrestasi, 
+                                                        p.tanggalPengajuan, 
+                                                        p.waktu,m.nama mahasiswa,
+                                                        p.namaLomba,
+                                                        p.bidang,
+                                                        p.jenis,
+                                                        d.nama dosen,
+                                                        p.tingkat,
+                                                        p.poin,
+                                                        p.status,
+                                                        p.sertifikatPath,
+                                                        p.suratTugasPath,
+                                                        p.dokumentasiPath,
+                                                        k.poin poinKategori
+                                                    FROM 
+                                                        prestasi p 
+                                                    INNER JOIN 
+                                                        mahasiswa m 
+                                                    ON 
+                                                        m.nim = p.nimMahasiswa 
+                                                    INNER JOIN 
+                                                        dosen d 
+                                                    ON
+                                                        d.nip = p.nipDosenPembimbing
+                                                    INNER JOIN
+                                                        kategori k
+                                                    ON
+                                                        k.namaKategori = p.jenis
+                                                    WHERE 
+                                                        p.status = 'diterimaDosen' 
+                                                    ORDER BY idPrestasi ASC
+                                                ");
         $success = $stmt->execute();
         if ($success) {
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -58,41 +88,14 @@ class AdminModel extends Model
         return [];
     }
 
-    function getDetailPrestasi($idPrestasi)
-    {
-        $stmt = $this->_dbConnection->prepare("SELECT * FROM prestasi WHERE idPrestasi = :value1");
-        $stmt->bindParam(':value1', $idPrestasi);
-        $success = $stmt->execute();
-        if ($success) {
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        }
-        return [];
-
-    }
-
-    function getTingkat()
-    {
-        $stmt = $this->_dbConnection->prepare("SELECT * FROM tingkat");
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    function getKategori()
-    {
-        $stmt = $this->_dbConnection->prepare("SELECT * FROM kategori");
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function editKategoriAndTingkat($table, $process, $name, $id = 0)
+    public function editKategoriAndTingkat($table, $process, $name, $id = 0, $poin = NULL)
     {   
         if ($process == 'tambah') {
-            $nameColumn = 'nama'.ucwords($table); 
-            $sql = "INSERT INTO $table ($nameColumn) VALUES (:nama)";
+            $nameColumn = 'nama'.$table; 
+            $sql = is_null($poin) ? "INSERT INTO $table ($nameColumn) VALUES (:nama)" : "INSERT INTO $table ($nameColumn, poin) VALUES (:nama, :poin)";
             $stmt = $this->_dbConnection->prepare($sql);
             $stmt->bindParam(':nama', $name);
+            isset($poin) ? $stmt->bindParam(':poin', $poin, PDO::PARAM_INT) : NULL;
         } else if ($process == 'hapus') {
             $nameColumn = 'id'.$table; 
             $sql = "DELETE FROM $table WHERE $nameColumn = :id";

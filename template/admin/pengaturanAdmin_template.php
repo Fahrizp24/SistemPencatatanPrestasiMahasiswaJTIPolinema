@@ -87,6 +87,7 @@
                     <form id="tambahKategori">
                         <div class="add-category-form">
                             <input type="text" name="nama" id="nama" placeholder="Masukkan nama kategori baru" required>
+                            <input type="number" name="poin" id="poin" placeholder="Masukkan poin kategori" required>
                         </div>
                         <div class="action-buttons-category">
                             <button type="reset" class="cancel-button">Batal</button>

@@ -91,6 +91,7 @@
                                                 <option value='B'> Kluster B </option>
                                                 <option value='C'> Kluster C </option>
                                             </select>
+                                            <input type='number' value='". $row['poinKategori'] ."' id='poinKategori' name='poinKategori' hidden>
                                             <button type='button' id='submit-point'>Simpan</button>
                                         </form>
                                     </div>
@@ -155,22 +156,28 @@
                 submitBtn.addEventListener("click", () => {
                     const modal = submitBtn.closest(".modal");
                     const pointInput = modal.querySelector("#poin").value;
+                    const poinKategori = parseInt(modal.querySelector("#poinKategori").value, 10);
                     var point = 0;
+
+                    //Memberikan poin kategori ke point
+                    point += poinKategori;
 
                     switch (pointInput) {
                         case 'A':
-                            point = 15;
+                            point += 15;
                             break;
                         case 'B':
-                            point = 10;
+                            point += 10;
                             break;
                         case 'C':
-                            point = 5;
+                            point += 5;
                             break;
                         default:
-                            point = 0;
+                            point += 0;
                             break;
                     }
+
+                    console.log(point)
 
                     // Dapatkan ID prestasi dari ID modal secara langsung
                     const idPrestasi = modal.getAttribute('id').split('-')[1];

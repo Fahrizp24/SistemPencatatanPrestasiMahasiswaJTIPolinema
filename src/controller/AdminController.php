@@ -36,7 +36,7 @@ class AdminController extends Controller
 
     public function detailPrestasi()
     {
-        $prestasi = $this->_model->getDetailPrestasi($_GET['idPrestasi']);
+        $prestasi = $this->_model->getPrestasi($_GET['idPrestasi']);
         $this->view->setData(['prestasi' => $prestasi]);
         $this->view->setTemplate('template/admin/detailPrestasiAdmin_template.php');
         $this->view->render();
@@ -73,7 +73,7 @@ class AdminController extends Controller
         $this->view->render();
     }
 
-    public function editTable() {
+    public function editKategoriAndTingkat() {
         $data=$_POST;
 
         if (isset($data['process'])) {
@@ -81,7 +81,8 @@ class AdminController extends Controller
             $process = htmlspecialchars($data['process']);
             $name = htmlspecialchars($data['name']);
             $id = htmlspecialchars($data['id']);
-            echo $this->_model->editKategoriAndTingkat( $table,$process,$name,$id);
+            $poin = isset($data['poin']) ? htmlspecialchars($data['poin']) : NULL;
+            echo $this->_model->editKategoriAndTingkat( $table,$process,$name,$id, $poin);
         }
         exit;
     }

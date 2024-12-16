@@ -72,7 +72,8 @@ CREATE TABLE prodi (
 
 CREATE TABLE kategori (
 	idKategori INT IDENTITY PRIMARY KEY,
-	namaKategori VARCHAR(25) NOT NULL
+	namaKategori VARCHAR(25) NOT NULL,
+	poin INT NOT NULL
 )
 
 CREATE TABLE tingkat (
