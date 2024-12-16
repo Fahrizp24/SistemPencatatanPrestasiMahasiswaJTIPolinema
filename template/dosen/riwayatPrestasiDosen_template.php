@@ -11,7 +11,7 @@ require_once 'assets/component/check_login.php';
     </title>
     <link rel="stylesheet" href="assets/css/detailPrestasi.css">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/show-prestasi-doc.js"></script>
     <link rel="icon" href="img/logoJTI.png">
 </head>
 
@@ -27,17 +27,17 @@ require_once 'assets/component/check_login.php';
                     <div class="form-group">
                         <div>
                             <label>Nama Lomba</label>
-                            <p><?php echo $prestasi['namaLomba']; ?></p>
+                            <p><?= $prestasi['namaLomba']; ?></p>
                             <label>Penyelenggara</label>
-                            <p><?php echo $prestasi['penyelenggara']; ?></p>
+                            <p><?= $prestasi['penyelenggara']; ?></p>
                             <label>Bidang</label>
-                            <p><?php echo $prestasi['bidang']; ?></p>
-                            <label>Tanggal Final (YY//MM/DD)</label>
-                            <p><?php echo $prestasi['waktu']; ?></p>
+                            <p><?= $prestasi['bidang']; ?></p>
+                            <label>Tanggal Final</label>
+                            <p><?= date('d-m-Y', strtotime($prestasi['waktu'])); ?></p>
                             <label>Dosen Pembimbing</label>
-                            <p><?php echo $prestasi['nipDosenPembimbing']; ?></p>
+                            <p><?= $prestasi['namaDosen']; ?></p>
                             <label>Jenis</label>
-                            <p><?php echo $prestasi['jenis']; ?></p>
+                            <p><?= $prestasi['jenis']; ?></p>
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@ require_once 'assets/component/check_login.php';
                         </div>
                         <div class="keterangan">
                             <label for="keterangan" style="font-weight: bold;">Keterangan :</label>
-                            <textarea id="keterangan" readonly></textarea>
+                            <textarea id="keterangan" readonly><?=$prestasi['keterangan']?></textarea>
                         </div>
                     </div>
 
@@ -118,43 +118,6 @@ require_once 'assets/component/check_login.php';
         <img src="assets/view/img/LogoPolinema.png" alt="logo POLINEMA" width="20" height="20">
     </div>
     </div>
-    <script>
-        // Array untuk menyimpan modal dan tombol
-        var modals = [
-            { modal: document.getElementById("sertifikat-modal"), btn: document.getElementById("sertifikatPath") },
-            { modal: document.getElementById("dokumentasi-modal"), btn: document.getElementById("dokumentasiPath") },
-            { modal: document.getElementById("suratTugas-modal"), btn: document.getElementById("suratTugasPath") }
-        ];
-
-        // Fungsi untuk membuka modal
-        modals.forEach(function (item) {
-            item.btn.onclick = function () {
-                item.modal.style.display = "block";
-            };
-        });
-
-        // Fungsi untuk menutup modal
-        function closeModal(modal) {
-            modal.style.display = "none";
-        }
-
-        // Menambahkan event listener untuk tombol close
-        var closeButtons = document.getElementsByClassName("close");
-        Array.from(closeButtons).forEach(function (closeBtn, index) {
-            closeBtn.onclick = function () {
-                closeModal(modals[index].modal);
-            };
-        });
-
-        // Menutup modal jika pengguna mengklik di luar modal
-        window.onclick = function (event) {
-            modals.forEach(function (item) {
-                if (event.target == item.modal) {
-                    closeModal(item.modal);
-                }
-            });
-        };
-    </script>
 </body>
 
 </html>

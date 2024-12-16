@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPPM POLINEMA</title>
     <link rel="stylesheet" href="assets/css/landingStyle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/img/SPPMicon.png">
-
-</head>
+    <script src="assets/js/landing-page.js"></script></head>
 
 <body>
     <header>
@@ -75,32 +72,6 @@
         </div>
     </main>
     <?php require_once 'assets/component/footer.html' ?>
-    <script>
-        window.onload = () => {
-            const newsWrapper = document.querySelector('.news-wrapper');
-            const newsItems = document.querySelectorAll('.news-item');
-
-            // Gandakan berita untuk menciptakan ilusi aliran tak terputus
-            newsItems.forEach(item => {
-                const clone = item.cloneNode(true);
-                newsWrapper.appendChild(clone);
-            });
-
-            // Tunggu sampai layout sepenuhnya selesai
-            setTimeout(() => {
-                // Menghitung panjang total berita
-                let totalWidth = 0;
-                document.querySelectorAll('.news-item').forEach(item => {
-                    totalWidth += item.offsetWidth + 50; // Tambahkan margin antar item
-                });
-
-                // Sesuaikan durasi animasi berdasarkan panjang konten
-                const animationDuration = totalWidth / 50; // Semakin besar pembagi, semakin lambat
-                newsWrapper.style.animationDuration = `${animationDuration}s`;
-            }, 100); // Penundaan 100ms untuk memastikan render selesai
-        };
-
-    </script>
 </body>
 
 </html>

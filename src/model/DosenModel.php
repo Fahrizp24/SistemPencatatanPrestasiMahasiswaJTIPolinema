@@ -52,7 +52,7 @@ class DosenModel extends Model
 
     function getRiwayatPrestasi($idPrestasi)
     {
-        $stmt = $this->_dbConnection->prepare("SELECT * FROM prestasi WHERE idPrestasi = :value1");
+        $stmt = $this->_dbConnection->prepare("SELECT p.*, d.nama namaDosen FROM prestasi p INNER JOIN dosen d ON p.nipDosenPembimbing = d.nip WHERE idPrestasi = :value1");
         $stmt->bindParam(':value1', $idPrestasi);
         $success = $stmt->execute();
         if ($success) {

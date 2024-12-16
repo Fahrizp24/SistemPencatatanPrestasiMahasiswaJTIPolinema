@@ -50,20 +50,20 @@
                             $row['status'] = 'diproses';
                         } else if ($row['status'] == 'diterimaAdmin') {
                             $row['status'] = 'diterima';
-                        }
-                        echo "<tr>";
-                        echo "<td>" . date('d-m-Y', strtotime($row['tanggalPengajuan'])) . "</td>";
-                        echo "<td>" . $row['nama'] . "</td>";
-                        echo "<td>" . $row['namaLomba'] . "</td>";
-                        echo "<td>" . $row['bidang'] . "</td>";
-                        echo "<td>" . $row['jenis'] . "</td>";
-                        echo "<td>" . "Nasional" . "</td>";
-                        echo "<td><span class='status status-" . $row['status'] . "'>" . ucwords($row['status']) . "</span></td>";
-                        echo "<td><a href=''><a href='riwayatPrestasiDosen?idPrestasi=" . urlencode($row['idPrestasi']) .
-                            "' class='detail-button'>Lihat</a></a></td>";
-                        echo "</tr>";
-                    }
-                    ?>
+                        } ?>
+                        <tr>
+                            <td> 
+                                <?= date('d-m-Y', strtotime($row['tanggalPengajuan']))?>
+                            </td>
+                            <td> <?= $row['nama']?></td>
+                            <td> <?= $row['namaLomba']?></td>
+                            <td> <?= $row['bidang']?></td>
+                            <td> <?= $row['jenis']?></td>
+                            <td> <?= $row['tingkat']?></td>
+                            <td> <span class="status status-<?=$row['status']?>"> <?=ucwords($row['status'])?> </span></td>
+                            <td> <a href=''><a href="riwayatPrestasiDosen?idPrestasi=<?=urlencode($row['idPrestasi'])?>" class="detail-button">Lihat</a></a></td>
+                        </tr>
+                    <?php }?>
                 </table>
             </div>
             <div class="footer">
@@ -73,6 +73,5 @@
         </div>
     </div>
 </body>
-
 
 </html>
