@@ -1,8 +1,3 @@
-<?php
-require_once 'assets/component/check_login.php';
-
-?>
-
 <html>
 
 <head>
