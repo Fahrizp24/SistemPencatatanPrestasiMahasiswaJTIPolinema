@@ -95,36 +95,28 @@ $(document).ready(function () {
             }
         });
     })
-
-    //TODO : nih dibawah buat apa yak
-
-    // $('#submit-point').submit(function (event) {
-    //     event.preventDefault();
-    //     var idPrestasi = $('#idPrestasi').val();
-    //     var poin = $('#poin').val();
-    //     $('#')
-    //     $.ajax({
-    //         url: '../controller/process-form',
-    //         type: 'POST',
-    //         data: {
-    //             action: 'updatePoinAdmin', // Parameter untuk menentukan fungsi yang dipanggil
-    //             idPrestasi: idPrestasi,
-    //             poin: poin,
-    //         },
-    //         success: function (response) {
-    //             var data = JSON.parse(response);
-    //             if (data.status === 'success') {
-    //                 window.location.href = '../view/index'; // window refresh
-    //             } else {
-    //                 $('#status').html(data.message);
-    //             }
-    //         },
-    //         error: function () {
-    //             console.error(error);
-    //             alert('Proses Error.');
-    //         }
-    //     });
-    // });
-
 });
 
+function toggleMenu(menu) {
+    const tingkatLombaButton = document.getElementById('tingkatLombaButton');
+    const kategoriLombaButton = document.getElementById('kategoriLombaButton');
+    const tingkatLomba = document.querySelector('.tingkat-lomba');
+    const kategoriLomba = document.querySelector('.kategori-lomba');
+    const addLevel = document.querySelector('.add-level');
+    const addLevelForm = document.querySelector('.add-level-form');
+
+    if (menu === 'tingkatLomba') {
+        tingkatLombaButton.classList.remove('inactive');
+        kategoriLombaButton.classList.add('inactive');
+        tingkatLomba.style.display = 'block';
+        kategoriLomba.style.display = 'none';
+
+
+    } else if (menu === 'kategoriLomba') {
+        tingkatLombaButton.classList.add('inactive');
+        kategoriLombaButton.classList.remove('inactive');
+        tingkatLomba.style.display = 'none';
+        kategoriLomba.style.display = 'block';
+
+    }
+}

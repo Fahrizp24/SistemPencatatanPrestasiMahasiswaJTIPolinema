@@ -12,7 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/berandaAdminStyle.css">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/kontrol-akun.js"></script>
     <link rel="icon" href="assets/img/SPPMicon.png">
 </head>
 
@@ -34,17 +34,16 @@
                         <th>Aksi</th>
                     </tr>
                     <?php
-                    foreach ($antrian as $row) {
-                        echo "<tr>";
-                        echo "<td>" . $row['nama'] . "</td>";
-                        echo "<td>" . $row['role'] . "</td>";
-                        echo "<td>" . $row['email'] . "</td>";
-                        echo "<td>" . $row['username'] . "</td>";
-                        echo "<td>" . $row['prodi'] . "</td>";
-                        echo "<td class='action-buttons' id='" . $row['username'] . "'> <a class='btn btn-terima'>Terima</a> <a class='btn btn-tolak'>Tolak</a></td>";
-                        echo "</tr>";
-                    }
-                    ?>
+                    foreach ($antrian as $row) { ?>
+                        <tr>
+                        <td><?=$row['nama']?></td>
+                        <td><?=$row['role']?></td>
+                        <td><?=$row['email']?></td>
+                        <td><?=$row['username']?></td>
+                        <td><?=$row['prodi']?></td>
+                        <td class='action-buttons' id='<?=$row['username']?>'> <a class='btn btn-terima'>Terima</a> <a class='btn btn-tolak'>Tolak</a></td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
 
@@ -54,85 +53,6 @@
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.btn-terima').forEach((btnTerima) => {
-            btnTerima.addEventListener('click', () => {
-                const usernameAkun = btnTerima.closest('.action-buttons').id;
-                if (confirm(`Apakah Anda yakin menerima akun?`)) {
-                    // Kirim data menggunakan AJAX
-                    $.ajax({
-                        url: 'kontrolAkunAdmin/kelolaAkun',
-                        method: 'POST',
-                        data: {
-                            username: usernameAkun,
-                            status: 'diterima',
-                            action: 'updateAkun'
-                        },
-                        success: function (response) {
-                            try {
-                                const result = JSON.parse(response);
-                                if (result.status === 'success') {
-                                    alert('Akun berhasil diterima');
-                                    // Refresh halaman atau hapus baris
-                                    location.reload();
-                                } else {
-                                    alert('Gagal menolak Akun: ' + result.message);
-                                }
-                            } catch (e) {
-                                console.error('Error parsing response:', e);
-                                alert('Terjadi kesalahan dalam memproses respon');
-                            }
-                        },
-                        error: function (xhr, status, error) {
-                            console.error('Error:', error);
-                            alert('Terjadi kesalahan dalam mengirim data');
-                        }
-                    });
-                }
-            });
-        });
-
-        // Action untuk tombol Tolak
-        document.querySelectorAll('.btn-tolak').forEach((btnTolak) => {
-            btnTolak.addEventListener('click', () => {
-                const usernameAkun = btnTolak.closest('.action-buttons').id;
-
-                if (confirm(`Apakah Anda yakin menolak akun?`)) {
-                    // Kirim data menggunakan AJAX
-                    $.ajax({
-                        url: 'kontrolAkunAdmin/kelolaAkun',
-                        method: 'POST',
-                        data: {
-                            username: usernameAkun,
-                            status: 'ditolak',
-                            action: 'updateAkun'
-                        },
-                        success: function (response) {
-                            try {
-                                const result = JSON.parse(response);
-                                if (result.status === 'success') {
-                                    alert('Akun berhasil ditolak dan dihapus');
-                                    // Refresh halaman atau hapus baris
-                                    location.reload();
-                                } else {
-                                    alert('Gagal menolak Akun: ' + result.message);
-                                }
-                            } catch (e) {
-                                console.error('Error parsing response:', e);
-                                alert('Terjadi kesalahan dalam memproses respon');
-                            }
-                        },
-                        error: function (xhr, status, error) {
-                            console.error('Error:', error);
-                            alert('Terjadi kesalahan dalam mengirim data');
-                        }
-                    });
-                }
-
-            });
-        });
-
-    </script>
 </body>
 
 </html>

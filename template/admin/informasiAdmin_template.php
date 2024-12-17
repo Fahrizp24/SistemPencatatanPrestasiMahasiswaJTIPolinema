@@ -30,24 +30,21 @@
                     <h4>Kluster A</h4>
                     <p>
                         Kompetisi Nasional atau Internasional yang diselenggarakan oleh Kementrian atau Lembaga selevel.
-                        (15
-                        Poin)
-                        Seperti PIMNAS, GEMASTIK, KMIPN, OLIVIA dll.
                     </p>
+                    <p>Seperti PIMNAS, GEMASTIK, KMIPN, OLIVIA dll.</p>
 
                     <h4>Kluster B</h4>
                     <p>
                         Kompetisi Nasional yang diselenggarkaan oleh Institusi atau Universitas minimal selevel
                         Fakultas.
-                        (10 Poin)
-                        Seperti Compfest UI, ARKAVIDIA IT (STEI ITB), 4C FILKOM UB dll.
                     </p>
+                    <p>Seperti Compfest UI, ARKAVIDIA IT (STEI ITB), 4C FILKOM UB dll.</p>
 
                     <h4>Kluster C</h4>
                     <p>
-                        Kompetisi Nasional yang diselenggarakan oleh lembaga mahasiswa. (5 Poin)
-                        Seperti IT Competition PNB, Hology
+                        Kompetisi Nasional yang diselenggarakan oleh lembaga mahasiswa.
                     </p>
+                    <p>Seperti IT Competition PNB, Hology</p>
 
                 </div>
 
@@ -60,6 +57,4 @@
         </div>
     </div>
 </body>
-
-
 </html>

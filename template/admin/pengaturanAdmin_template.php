@@ -12,7 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/pengaturan.css">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/pengaturan-admin.js"></script>
     <link rel="icon" href="assets/img/SPPMicon.png">
 </head>
 
@@ -84,7 +84,7 @@
                     <form id="tambahKategori">
                         <div class="add-category-form">
                             <input type="text" name="nama" id="nama" placeholder="Masukkan nama kategori baru" required>
-                            <input type="number" name="poin" id="poin" placeholder="Masukkan poin kategori" required>
+                            <input type="number" name="poin" id="poin" placeholder="Masukkan poin kategori" min="1" max="15" required>
                         </div>
                         <div class="action-buttons-category">
                             <button type="reset" class="cancel-button">Batal</button>
@@ -101,30 +101,5 @@
         </div>
     </div>
 </body>
-<script>
-    function toggleMenu(menu) {
-        const tingkatLombaButton = document.getElementById('tingkatLombaButton');
-        const kategoriLombaButton = document.getElementById('kategoriLombaButton');
-        const tingkatLomba = document.querySelector('.tingkat-lomba');
-        const kategoriLomba = document.querySelector('.kategori-lomba');
-        const addLevel = document.querySelector('.add-level');
-        const addLevelForm = document.querySelector('.add-level-form');
-
-        if (menu === 'tingkatLomba') {
-            tingkatLombaButton.classList.remove('inactive');
-            kategoriLombaButton.classList.add('inactive');
-            tingkatLomba.style.display = 'block';
-            kategoriLomba.style.display = 'none';
-
-
-        } else if (menu === 'kategoriLomba') {
-            tingkatLombaButton.classList.add('inactive');
-            kategoriLombaButton.classList.remove('inactive');
-            tingkatLomba.style.display = 'none';
-            kategoriLomba.style.display = 'block';
-
-        }
-    }
-</script>
 
 </html>
