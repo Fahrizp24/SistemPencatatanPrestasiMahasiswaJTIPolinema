@@ -19,6 +19,52 @@ body {
     max-height: 80%; /* Keep within bounds */
     object-fit: contain;
 }
+/* Styling untuk elemen select */
+#poin {
+    font-family: inter, sans-serif;
+    font-size: 16px;
+    color: #333;
+    padding: 8px 20px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#poin:hover {
+    border-color: #888;
+}
+
+#poin:focus {
+    outline: none;
+    border-color: #5272BF;
+    box-shadow: 0 0 5px rgb(3, 122, 186);
+}
+
+#poin option {
+    font-size: 14px;
+    padding: 5px;
+    color: #333;
+    background-color: #fff;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Tidak mengganggu interaksi */
+    color: #555;
+}
+
 
 .menu-toggle {
     display: none;
