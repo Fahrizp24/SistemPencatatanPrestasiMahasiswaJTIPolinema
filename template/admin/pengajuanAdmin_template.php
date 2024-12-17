@@ -81,18 +81,14 @@
                                             <hr class='separator'>
                                             <p>Baca ketentuan Pemberian Poin pada menu informasi. Pastikan poin yang diinputkan
                                                 <span style='color:red'>sesuai dengan ketentuan yang berlaku!</span></p>
-                                            <label for='poin'>Beri Poin:</label>
-                                            
-<div class='select-wrapper'>
-    <select name='poin' id='poin'>
-        <option value='A'>Kluster A</option>
-        <option value='B'>Kluster B</option>
-        <option value='C'>Kluster C</option>
-    </select>
-</div>
-
-
-                                            
+                                            <label for='poin'>Beri Poin:</label>                                            
+                                            <div class='select-wrapper'>
+                                                <select name='poin' id='poin'>
+                                                    <option value='A'>Kluster A</option>
+                                                    <option value='B'>Kluster B</option>
+                                                    <option value='C'>Kluster C</option>
+                                                </select>
+                                            </div>                           
                                             <input type='number' value='" . $row['poinKategori'] . "' id='poinKategori' name='poinKategori' hidden>
                                             <button type='button' id='submit-point'>Simpan</button>
                                         </form>
