@@ -10,8 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/berandaAdminStyle.css">
     <script src="assets/js/jquery-3.7.1.js"></script>
-    <script src="assets/js/display-function.js"></script>
-    <script src="assets/js/jquery-form.js"></script>
+    <script src="assets/js/beranda-admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="assets/img/SPPMicon.png">
 </head>
@@ -58,22 +57,20 @@
                             $row['status'] = 'diterima';
                         } else if ($row['status'] == 'diterimaDosen') {
                             $row['status'] = 'diproses';
-                        }
-                        echo "<tr>";
-                        echo "<td>" . date('d-m-Y', strtotime($row['tanggalPengajuan'])) . "</td>";
-                        echo "<td>" . $row['mahasiswa'] . "</td>";
-                        echo "<td>" . $row['namaLomba'] . "</td>";
-                        echo "<td>" . $row['bidang'] . "</td>";
-                        echo "<td>" . $row['jenis'] . "</td>";
-                        echo "<td>" . $row['dosen'] . "</td>";
-                        echo "<td>" . $row['tingkat'] . "</td>";
-                        echo "<td>" . $row['poin'] . "</td>";
-                        echo "<td><span class='status status-" . $row['status'] . "'>" . ucwords($row['status']) . "</span></td>";
-                        echo "<td><a href=''><a href='detailPrestasiAdmin?idPrestasi=" . urlencode($row['idPrestasi']) .
-                            "' class='detail-button'>Lihat</a></a></td>";
-                        echo "</tr>";
-                    }
-                    ?>
+                        } ?>
+                        <tr>
+                        <td><?=date('d-m-Y', strtotime($row['tanggalPengajuan']))?></td>
+                        <td><?=$row['mahasiswa']?></td>
+                        <td><?=$row['namaLomba']?></td>
+                        <td><?=$row['bidang']?></td>
+                        <td><?=$row['jenis']?></td>
+                        <td><?=$row['dosen']?></td>
+                        <td><?=$row['tingkat']?></td>
+                        <td><?=$row['poin']?></td>
+                        <td><span class='status status-<?=$row['status']?>'><?=ucwords($row['status'])?></span></td>
+                        <td><a href=''><a href='detailPrestasiAdmin?idPrestasi=<?=urlencode($row['idPrestasi'])?>' class='detail-button'>Lihat</a></a></td>";
+                        </tr>";
+                    <?php } ?>
                 </table>
             </div>
             <div class="footer">
@@ -86,41 +83,6 @@
         // Mengambil data dari PHP
         const jumlahPrestasi = <?php echo json_encode($chart); ?>;
         const tahunAjaran = <?php echo json_encode($TAChart); ?>;
-
-        // Mengakses elemen pertama dari array jumlahPrestasi karena nilai yang didapat dari json_encode adalah sebuah array
-        const teknikInformatika = jumlahPrestasi[0].TeknikInformatika;
-        const sistemInformasiBisnis = jumlahPrestasi[0].SistemInformasiBisnis;
-
-        const th1 = tahunAjaran[0].th1;
-        const th2 = tahunAjaran[0].th2;
-
-        getPieChart(
-            ['Teknik Informatika', 'Sistem Informasi Bisnis'],
-            [teknikInformatika, sistemInformasiBisnis]
-        );
-
-        const ctx2 = document.getElementById('pieChartTahunAjaran').getContext('2d');
-        const pieChart = new Chart(ctx2, {
-            type: 'pie', // Jenis grafik
-            data: {
-                labels: ['T.A. 2023/2024', 'T.A. 2024/2025'], // Label pie chart
-                datasets: [{
-                    data: [th1, th2], // Data persentase untuk setiap label
-                    backgroundColor: ['#006400', '#FFD700'], // Warna pie chart
-                    borderColor: ['#FFFFFF', '#FFFFFF'], // Warna border
-                    borderWidth: 2 // Lebar border
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'right', // Posisi legend
-                    }
-                }
-            }
-        });
     </script>
 </body>
 
